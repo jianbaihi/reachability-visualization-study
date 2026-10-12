@@ -1,0 +1,1860 @@
+{
+  "schemaVersion": 4,
+  "taskPoolVersion": "rittenhouse-formal-task-pool-v4",
+  "supersedes": [
+    "formal-task-pool-v1.json",
+    "formal-task-pool-v2.json",
+    "formal-task-pool-v3.json"
+  ],
+  "datasetId": "rittenhouse-fixed-v1",
+  "datasetLockedAt": "2026-10-10T19:38:55.981Z",
+  "center": {
+    "name": "Rittenhouse Square Park",
+    "lng": -75.171888,
+    "lat": 39.949479
+  },
+  "thresholds": [
+    5,
+    10,
+    15,
+    20
+  ],
+  "stimulusVersion": "rittenhouse-formal-v1",
+  "stimuli": {
+    "T1": {
+      "file": "formal-time-color.svg",
+      "manifest": "manifest-4.json",
+      "mode": "stepped"
+    },
+    "T2": {
+      "file": "formal-time-color.svg",
+      "manifest": "manifest-4.json",
+      "mode": "stepped"
+    },
+    "T3": {
+      "file": "formal-time-color.svg",
+      "manifest": "manifest-4.json",
+      "mode": "stepped"
+    },
+    "T4": {
+      "file": "formal-time-color.svg",
+      "manifest": "manifest-4.json",
+      "mode": "stepped"
+    },
+    "T5": {
+      "file": "formal-category-color.svg",
+      "manifest": "manifest-3.json",
+      "mode": "type"
+    }
+  },
+  "integrity": {
+    "poi_count": 113,
+    "ring_counts": {
+      "0-5": 30,
+      "5-10": 30,
+      "10-15": 30,
+      "15-20": 23
+    },
+    "formal_category_counts": {
+      "Restaurants": 68,
+      "Shopping": 29,
+      "Attractions & Landmarks": 8,
+      "Hotels & Travel": 8
+    }
+  },
+  "T1": {
+    "prompt_template": "请在图中选择 3 个位于【{ring_label}】步行时间范围内的地点。",
+    "target_pool": [
+      "0-5",
+      "5-10",
+      "10-15",
+      "15-20"
+    ],
+    "randomization": "stable_seed_uniform_ring",
+    "answer_type": "click_3_places",
+    "scoring_rule": "ANY_3_DISTINCT_IN_TARGET_RING",
+    "answers_by_ring": {
+      "0-5": {
+        "label": "0–5 min",
+        "count": 30,
+        "valid_places": [
+          {
+            "place_id": "30cpm1uq6xcQCmN6JTrB8w",
+            "name": "Luke's Lobster Rittenhouse",
+            "review_count": 1161,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "vuE1iseFrgNPumUEfHIZZQ",
+            "name": "JJ Thai Cuisine",
+            "review_count": 376,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "NjD-V9pdH7_V8Y8PGl-csw",
+            "name": "Townsend",
+            "review_count": 246,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "aL53puqxtcR1KZrrj4U7Jw",
+            "name": "Farmer's Keep",
+            "review_count": 205,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "_05DcCQmCP5aGnfCnI4r9Q",
+            "name": "Capital One Café",
+            "review_count": 178,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "0KEMPs7BD_WHI6zGpDcKjw",
+            "name": "Food & Friends",
+            "review_count": 167,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "9_B5sCqKBOKDAmYpByiFFg",
+            "name": "Branzino Italian Ristorante",
+            "review_count": 331,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "qzFBDBxFQFZ0D9erZ-4pCA",
+            "name": "Irina Sigal Dressmaker",
+            "review_count": 76,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "EQDtTsve_bNxhQzxfVy9nA",
+            "name": "ReLet's Foot SPA",
+            "review_count": 73,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "F6SuJfk4bTxVNDbJR-tn-A",
+            "name": "Apple Walnut Street",
+            "review_count": 219,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "HAUzjmv7YWHulWLsgdgmIw",
+            "name": "Ten Asian Food Hall",
+            "review_count": 74,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "BjVRG3OIeEp8X_x5tv8h5w",
+            "name": "City Sports",
+            "review_count": 57,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "h9o2TCtyqPify_HgC9wH0g",
+            "name": "Bluemercury",
+            "review_count": 69,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "3uLXZMnm68l1YwI8_FaFNA",
+            "name": "Bangkok Thai 9 Cuisine",
+            "review_count": 91,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "ePs4Z_Nqsm5-kQk_hAp2Dg",
+            "name": "Irish Pub",
+            "review_count": 167,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "kGjpBqAqG4mIuFSgU2KKEA",
+            "name": "The Royal Indian Cuisine",
+            "review_count": 28,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "_jRB9wKomaO1W3tfA1sX_Q",
+            "name": "Jackass Burrito",
+            "review_count": 26,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "Vu2JA3e98QsxaRhkiFIylw",
+            "name": "Mattress Firm Chestnut Street",
+            "review_count": 22,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "7QhxQrhqVJYo8JvPUGFD4A",
+            "name": "Allen Edmonds Mens Shoe Store",
+            "review_count": 14,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "XswkvtCnlcosB_8GXkI5lQ",
+            "name": "The Goat Rittenhouse",
+            "review_count": 18,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "m700WzvnKWSNp_HU_XhRPA",
+            "name": "Jack Wills",
+            "review_count": 14,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "Dqk-JnN76h5Roah466Z6tQ",
+            "name": "Joan Shepp Boutique",
+            "review_count": 13,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "i0sRilI4UUGa7IS8DAbQqg",
+            "name": "Fleur De Lis Boutique",
+            "review_count": 12,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "YbpNzwI5iBvsBDwdwc9Mmg",
+            "name": "Gordon Stein -I Love Philly Homes Team - Compass",
+            "review_count": 5,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "YDlLWQ8Tu0FCIQxEWcaZGA",
+            "name": "T-Mobile",
+            "review_count": 14,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "5jf7mjz3j_jOCFCHpl3UDA",
+            "name": "Kiki Hughes",
+            "review_count": 6,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "Qu-HGo_QNVQHEvJOAOdiOA",
+            "name": "InterAct Theatre Company",
+            "review_count": 7,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "q_aNiAml3tAeafeWDAeirQ",
+            "name": "Jacobs Music - Philadelphia",
+            "review_count": 7,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "Xxz8IhhHqrgwrty7ww4jDQ",
+            "name": "Raw Cafe",
+            "review_count": 6,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "U8rN2Euy3kLW5HkKfzfveg",
+            "name": "Philly Pretzel Factory",
+            "review_count": 8,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          }
+        ]
+      },
+      "5-10": {
+        "label": "5–10 min",
+        "count": 30,
+        "valid_places": [
+          {
+            "place_id": "X5fWO9e82EICHXzzs6eQMg",
+            "name": "Rescue Spa",
+            "review_count": 476,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "T8NWs6flR26edfhhwJNhNA",
+            "name": "Sahara Grill",
+            "review_count": 322,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "gjFUrbSMo1rA1jgG5IhA2A",
+            "name": "Chima Steakhouse",
+            "review_count": 697,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "P7MHW-EtCdp3eVF2P_nX0A",
+            "name": "Carl Alan Floral Designs LTD",
+            "review_count": 82,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "saVXla5i8TjE51S5uCaf6w",
+            "name": "Steak 48",
+            "review_count": 137,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "V8we7-uCa-SouadZmZ9Ieg",
+            "name": "The Cheesecake Factory",
+            "review_count": 381,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "t2KQa1plnfMoA_LOgBrUGA",
+            "name": "Loco Pez",
+            "review_count": 69,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "BM92j54mc-c-6MWqWSimRw",
+            "name": "Dmitri's",
+            "review_count": 151,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "ONtMDaW8JZhPaV51gkf3CA",
+            "name": "Liberty Time",
+            "review_count": 32,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "toEYTrafM81UMo2GyCSxFw",
+            "name": "Cambria Hotel Philadelphia Downtown Center City",
+            "review_count": 84,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "1qBemRZEO3XMlpyKZavTvg",
+            "name": "Roy's Restaurant",
+            "review_count": 60,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "cqzAz9oBzPNvJccZ2MNmbA",
+            "name": "Kidari Sushi Yatai",
+            "review_count": 58,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "WWbrvdfiqWsNaNu0N9Qe2Q",
+            "name": "Perfect Choice Cleaning Services",
+            "review_count": 37,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "doo0-waBL2E2kzySKMBvQQ",
+            "name": "Millennium Art Gallery",
+            "review_count": 19,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "bzO826Hw3DCuQ5xl3OEP7Q",
+            "name": "El Fuego",
+            "review_count": 68,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "ZHXWdMiqsi3HwkLmSi_WgQ",
+            "name": "Buca di Beppo",
+            "review_count": 51,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "uY4LSPsa3bVKzYQitbfsUw",
+            "name": "Zushi",
+            "review_count": 13,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "018ixB-WinNmflwX2UvS1g",
+            "name": "Pine St Deli",
+            "review_count": 16,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "DQDZQp-THbeWE1uQ7CNZ5w",
+            "name": "Colney Delicatessen",
+            "review_count": 18,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "HF1YWT8QVR7095r-aLbV5g",
+            "name": "Element Philadelphia",
+            "review_count": 9,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "aZd_dnnfvGdujkgWPai8tQ",
+            "name": "Dolce Italian - Philadelphia",
+            "review_count": 9,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "NY-8LSYUh16FCSCdIeVWWQ",
+            "name": "Brooks Brothers",
+            "review_count": 38,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "eUPf2XQgiZEVRO8-5RrSng",
+            "name": "Liberty Travel",
+            "review_count": 32,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "m408YCnvuIywzZkJX3K9KQ",
+            "name": "Au Bon Pain",
+            "review_count": 32,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "Hz40F0hsr4CIrHGHcRZ0Xw",
+            "name": "Salvation Army",
+            "review_count": 15,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "3WgzKhDmH5nU946Yk4wbzA",
+            "name": "Club Adesso",
+            "review_count": 12,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "_YdvkXME0h2PNqP8yyA7Jg",
+            "name": "ShoeWoo",
+            "review_count": 6,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "xjPie6OJg5lM3Q9oJsJoeA",
+            "name": "CVS Pharmacy",
+            "review_count": 16,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "ZTFpUHP8c49fmvmonugO2g",
+            "name": "Finish Line Sports",
+            "review_count": 8,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "0LpmLt3d6BK_ljVOadrMVQ",
+            "name": "Mitchell & Ness Nostalgia Company",
+            "review_count": 11,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          }
+        ]
+      },
+      "10-15": {
+        "label": "10–15 min",
+        "count": 30,
+        "valid_places": [
+          {
+            "place_id": "lWedWkinrM5j13pyimbpbA",
+            "name": "Miles Table",
+            "review_count": 514,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "oGMwCmV1EQZgCdylAbK9ow",
+            "name": "Rex at the Royal",
+            "review_count": 471,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "eqNutOMnPqKa9QDAY6KfEw",
+            "name": "J'aime French Bakery",
+            "review_count": 310,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "zucC7rHpXPYBu7aEqj0NUw",
+            "name": "Libertine Restauraunt",
+            "review_count": 117,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "zAxWNkDWBvgNfIwTAyCBMw",
+            "name": "Zio's Brick Oven Pizzeria",
+            "review_count": 193,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "j9tIldJfidEFNEMQM9vANg",
+            "name": "Ninja Bao",
+            "review_count": 49,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "t37dsDBpe65qUb81OSFr-g",
+            "name": "Philadelphia Theatre Company",
+            "review_count": 32,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "SjCxvaC-OZLnOqAqHTXG_Q",
+            "name": "My Thai Restaurant",
+            "review_count": 110,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "7n0qmplNMqPLkcRfI2_ieA",
+            "name": "Minar Palace",
+            "review_count": 203,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "xKPf2mNMmhm39CArujn2Wg",
+            "name": "Xiang Gourmet",
+            "review_count": 48,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "-qWhas31o61V6vC6yo6NWw",
+            "name": "Arch Gourmet",
+            "review_count": 36,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "NDb1YaV6Dls7SRW6dPtIOQ",
+            "name": "Spiga",
+            "review_count": 45,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "LNRyU5-qWpJg4F6546a3Dg",
+            "name": "Girasole Ristorante",
+            "review_count": 75,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "szdH65mQam5lNncCfJLUwA",
+            "name": "13th Street Gourmet Pizza",
+            "review_count": 154,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "oFv9-wwifD3u8FFx6fPRYA",
+            "name": "Baja Room at Pico de Gallo",
+            "review_count": 63,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "2XHBmfcPgVBNY2QVDYKUZg",
+            "name": "Sabroso+Sorbo",
+            "review_count": 15,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "avwFfTOYrPZs5oHfA0ExnA",
+            "name": "B&K Arts",
+            "review_count": 7,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "IgNDlyLERBwFGphgcC5VDQ",
+            "name": "Cosi",
+            "review_count": 63,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "tjV-B9myQd7L5ZznDxC3Wg",
+            "name": "House of Beauty",
+            "review_count": 103,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "T6YU8_8aDC8EnkL_yhQnvQ",
+            "name": "Run Shoe Store",
+            "review_count": 6,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "dXvNGmR8gGmHheK5gLHvkw",
+            "name": "Mexican Post",
+            "review_count": 93,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "hWuLvI5QqPyQ1x9ww0HeRw",
+            "name": "Giorgio Pizza on Pine",
+            "review_count": 19,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "1jpzmHp3tNwrRk8Sh_eV9g",
+            "name": "Sweet Pea",
+            "review_count": 5,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "znr5iGWOnCxgmZ8DJ-hEqQ",
+            "name": "Big Bang's Bar & Grill",
+            "review_count": 11,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "HLrDflJTscXg3OuuU0SYkg",
+            "name": "YOLO",
+            "review_count": 21,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "qp-mPpFUvi2AmDAKKMGH6g",
+            "name": "MAC Cosmetics Macy's Center City",
+            "review_count": 5,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "iefY4RDGOZrATgYaXqbx8w",
+            "name": "Bath & Body Works",
+            "review_count": 5,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "rHLJ0CW60VNonqIL5_jE4Q",
+            "name": "SEPTA BSL Lombard-South Station",
+            "review_count": 5,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "gnE7VBl6EDTiy02a4WP4ng",
+            "name": "McDonald's",
+            "review_count": 7,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "fvKwOXGdrRxh8RYMGBV56w",
+            "name": "Subway",
+            "review_count": 5,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          }
+        ]
+      },
+      "15-20": {
+        "label": "15–20 min",
+        "count": 23,
+        "valid_places": [
+          {
+            "place_id": "ysvzP0VvMTrGmUClKJ3img",
+            "name": "Ms Tootsie's RBL",
+            "review_count": 612,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "OZnU--KfAdDwJarO8roRig",
+            "name": "Via Bicycle",
+            "review_count": 160,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Shopping"
+          },
+          {
+            "place_id": "jLDwSeoQ_kDQwhnUJQO2yw",
+            "name": "Sansom Kabob House",
+            "review_count": 106,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "UwkrmLk--LT65HndB1Odhw",
+            "name": "Pennsylvania Academy of Fine Arts",
+            "review_count": 56,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "aRyP578y47vwJ4KFIicjCw",
+            "name": "Yellowtail",
+            "review_count": 120,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "EaBgGhjd8rB9KVvCXKaiAw",
+            "name": "Aloft Philadelphia Downtown",
+            "review_count": 104,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "cCwNX2r-4hDXPNGwDx2otg",
+            "name": "Six Fishes Healing Arts",
+            "review_count": 21,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "H2c5e7PfcCg9f9Ew19-xRw",
+            "name": "Sushi Poke",
+            "review_count": 29,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "fWRWzBfQnMcNiaOi5TJVdw",
+            "name": "Cafe V and Kitchen",
+            "review_count": 140,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "T6S3ANFsbrl_1Q6ow-7XYA",
+            "name": "The Gold Standard Cafe",
+            "review_count": 26,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "___UdvaxCnwsQ7nA1eKZAQ",
+            "name": "PHLASH",
+            "review_count": 41,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "52KaQ6LSMgzjqhDuHBheJQ",
+            "name": "Frugal Frames",
+            "review_count": 16,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "Bk_1vsPtOtO0bojfQZQIOw",
+            "name": "Wasabi House",
+            "review_count": 40,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "29ThPh6IA69V-SfcwfV9Dg",
+            "name": "Starbucks",
+            "review_count": 48,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "f-vB1_GyGBYzHX68xS5Dfw",
+            "name": "Saigon Quy-Bau Restaurant",
+            "review_count": 17,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "AJzAO951NR1LFaBHojeudg",
+            "name": "Tableau at PAFA",
+            "review_count": 19,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "v7RMWJJ48HrX1gI8DXZbew",
+            "name": "Convention Center Parking Facility",
+            "review_count": 18,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Attractions & Landmarks"
+          },
+          {
+            "place_id": "nqkMURJeB7RBi2serBYFNg",
+            "name": "W XYZ Bar",
+            "review_count": 7,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "PhJeNe9KRtrek1BP-HaMtA",
+            "name": "Bobby Chez",
+            "review_count": 6,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "6wnbyXMDoM_M29zwacAmhQ",
+            "name": "Grilly Cheese",
+            "review_count": 6,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "6Bos3UU5heFlqySLcYvwnw",
+            "name": "Budget Car Rental",
+            "review_count": 12,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "4Peac-dIOM80hSw9iqEAJw",
+            "name": "Hertz",
+            "review_count": 26,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Hotels & Travel"
+          },
+          {
+            "place_id": "IKLm7PJDrtFdZE2N_D3mUQ",
+            "name": "T-Mobile",
+            "review_count": 5,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Shopping"
+          }
+        ]
+      }
+    },
+    "display_title": null
+  },
+  "T2": {
+    "prompt_template": "在【{ring_label}】步行时间范围内，请选择评论数最高的 2 个地点。",
+    "target_pool": [
+      "0-5",
+      "5-10",
+      "10-15",
+      "15-20"
+    ],
+    "randomization": "stable_seed_uniform_ring_prefer_not_T1",
+    "answer_type": "click_2_places",
+    "scoring_rule": "UNORDERED_EXACT_SET",
+    "answers_by_ring": {
+      "0-5": {
+        "label": "0–5 min",
+        "correct_places": [
+          {
+            "place_id": "30cpm1uq6xcQCmN6JTrB8w",
+            "name": "Luke's Lobster Rittenhouse",
+            "review_count": 1161,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "vuE1iseFrgNPumUEfHIZZQ",
+            "name": "JJ Thai Cuisine",
+            "review_count": 376,
+            "walking_time": 5,
+            "ring": "0-5",
+            "ring_label": "0–5 min",
+            "formal_category": "Restaurants"
+          }
+        ]
+      },
+      "5-10": {
+        "label": "5–10 min",
+        "correct_places": [
+          {
+            "place_id": "gjFUrbSMo1rA1jgG5IhA2A",
+            "name": "Chima Steakhouse",
+            "review_count": 697,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "X5fWO9e82EICHXzzs6eQMg",
+            "name": "Rescue Spa",
+            "review_count": 476,
+            "walking_time": 10,
+            "ring": "5-10",
+            "ring_label": "5–10 min",
+            "formal_category": "Shopping"
+          }
+        ]
+      },
+      "10-15": {
+        "label": "10–15 min",
+        "correct_places": [
+          {
+            "place_id": "lWedWkinrM5j13pyimbpbA",
+            "name": "Miles Table",
+            "review_count": 514,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "oGMwCmV1EQZgCdylAbK9ow",
+            "name": "Rex at the Royal",
+            "review_count": 471,
+            "walking_time": 15,
+            "ring": "10-15",
+            "ring_label": "10–15 min",
+            "formal_category": "Restaurants"
+          }
+        ]
+      },
+      "15-20": {
+        "label": "15–20 min",
+        "correct_places": [
+          {
+            "place_id": "ysvzP0VvMTrGmUClKJ3img",
+            "name": "Ms Tootsie's RBL",
+            "review_count": 612,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Restaurants"
+          },
+          {
+            "place_id": "OZnU--KfAdDwJarO8roRig",
+            "name": "Via Bicycle",
+            "review_count": 160,
+            "walking_time": 20,
+            "ring": "15-20",
+            "ring_label": "15–20 min",
+            "formal_category": "Shopping"
+          }
+        ]
+      }
+    },
+    "display_title": null
+  },
+  "T3": {
+    "prompt_template": "请在图中找到地点「{target_name}」。它位于哪个步行时间范围？",
+    "options": [
+      "0-5",
+      "5-10",
+      "10-15",
+      "15-20",
+      "unsure"
+    ],
+    "answer_type": "single_choice_ring",
+    "scoring_rule": "ANSWER_EQUALS_TARGET_RING",
+    "candidate_rule": "review_count percentile P35–P65 inclusive; review_count is monotonic with the frozen font-size mapping",
+    "percentiles": {
+      "p35": 18.0,
+      "p65": 68.8
+    },
+    "candidate_count": 35,
+    "candidate_pool_by_ring": {
+      "0-5": [
+        {
+          "place_id": "XswkvtCnlcosB_8GXkI5lQ",
+          "name": "The Goat Rittenhouse",
+          "review_count": 18,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "Vu2JA3e98QsxaRhkiFIylw",
+          "name": "Mattress Firm Chestnut Street",
+          "review_count": 22,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "_jRB9wKomaO1W3tfA1sX_Q",
+          "name": "Jackass Burrito",
+          "review_count": 26,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "kGjpBqAqG4mIuFSgU2KKEA",
+          "name": "The Royal Indian Cuisine",
+          "review_count": 28,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "BjVRG3OIeEp8X_x5tv8h5w",
+          "name": "City Sports",
+          "review_count": 57,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Shopping"
+        }
+      ],
+      "5-10": [
+        {
+          "place_id": "DQDZQp-THbeWE1uQ7CNZ5w",
+          "name": "Colney Delicatessen",
+          "review_count": 18,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "doo0-waBL2E2kzySKMBvQQ",
+          "name": "Millennium Art Gallery",
+          "review_count": 19,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Attractions & Landmarks"
+        },
+        {
+          "place_id": "m408YCnvuIywzZkJX3K9KQ",
+          "name": "Au Bon Pain",
+          "review_count": 32,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "ONtMDaW8JZhPaV51gkf3CA",
+          "name": "Liberty Time",
+          "review_count": 32,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "eUPf2XQgiZEVRO8-5RrSng",
+          "name": "Liberty Travel",
+          "review_count": 32,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Hotels & Travel"
+        },
+        {
+          "place_id": "WWbrvdfiqWsNaNu0N9Qe2Q",
+          "name": "Perfect Choice Cleaning Services",
+          "review_count": 37,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "NY-8LSYUh16FCSCdIeVWWQ",
+          "name": "Brooks Brothers",
+          "review_count": 38,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "ZHXWdMiqsi3HwkLmSi_WgQ",
+          "name": "Buca di Beppo",
+          "review_count": 51,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "cqzAz9oBzPNvJccZ2MNmbA",
+          "name": "Kidari Sushi Yatai",
+          "review_count": 58,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "1qBemRZEO3XMlpyKZavTvg",
+          "name": "Roy's Restaurant",
+          "review_count": 60,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "bzO826Hw3DCuQ5xl3OEP7Q",
+          "name": "El Fuego",
+          "review_count": 68,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        }
+      ],
+      "10-15": [
+        {
+          "place_id": "hWuLvI5QqPyQ1x9ww0HeRw",
+          "name": "Giorgio Pizza on Pine",
+          "review_count": 19,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "HLrDflJTscXg3OuuU0SYkg",
+          "name": "YOLO",
+          "review_count": 21,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "t37dsDBpe65qUb81OSFr-g",
+          "name": "Philadelphia Theatre Company",
+          "review_count": 32,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Attractions & Landmarks"
+        },
+        {
+          "place_id": "-qWhas31o61V6vC6yo6NWw",
+          "name": "Arch Gourmet",
+          "review_count": 36,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "NDb1YaV6Dls7SRW6dPtIOQ",
+          "name": "Spiga",
+          "review_count": 45,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "xKPf2mNMmhm39CArujn2Wg",
+          "name": "Xiang Gourmet",
+          "review_count": 48,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "j9tIldJfidEFNEMQM9vANg",
+          "name": "Ninja Bao",
+          "review_count": 49,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "oFv9-wwifD3u8FFx6fPRYA",
+          "name": "Baja Room at Pico de Gallo",
+          "review_count": 63,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "IgNDlyLERBwFGphgcC5VDQ",
+          "name": "Cosi",
+          "review_count": 63,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        }
+      ],
+      "15-20": [
+        {
+          "place_id": "v7RMWJJ48HrX1gI8DXZbew",
+          "name": "Convention Center Parking Facility",
+          "review_count": 18,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Attractions & Landmarks"
+        },
+        {
+          "place_id": "AJzAO951NR1LFaBHojeudg",
+          "name": "Tableau at PAFA",
+          "review_count": 19,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Attractions & Landmarks"
+        },
+        {
+          "place_id": "cCwNX2r-4hDXPNGwDx2otg",
+          "name": "Six Fishes Healing Arts",
+          "review_count": 21,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "4Peac-dIOM80hSw9iqEAJw",
+          "name": "Hertz",
+          "review_count": 26,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Hotels & Travel"
+        },
+        {
+          "place_id": "T6S3ANFsbrl_1Q6ow-7XYA",
+          "name": "The Gold Standard Cafe",
+          "review_count": 26,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "H2c5e7PfcCg9f9Ew19-xRw",
+          "name": "Sushi Poke",
+          "review_count": 29,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "Bk_1vsPtOtO0bojfQZQIOw",
+          "name": "Wasabi House",
+          "review_count": 40,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "___UdvaxCnwsQ7nA1eKZAQ",
+          "name": "PHLASH",
+          "review_count": 41,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Hotels & Travel"
+        },
+        {
+          "place_id": "29ThPh6IA69V-SfcwfV9Dg",
+          "name": "Starbucks",
+          "review_count": 48,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "UwkrmLk--LT65HndB1Odhw",
+          "name": "Pennsylvania Academy of Fine Arts",
+          "review_count": 56,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Attractions & Landmarks"
+        }
+      ]
+    },
+    "display_title": null
+  },
+  "T4": {
+    "prompt_template": "请在图中找到地点「{target_name}」。它位于哪个步行时间范围？",
+    "options": [
+      "0-5",
+      "5-10",
+      "10-15",
+      "15-20",
+      "unsure"
+    ],
+    "answer_type": "single_choice_ring",
+    "scoring_rule": "ANSWER_EQUALS_TARGET_RING",
+    "candidate_rule": "review_count percentile P85+; review_count is monotonic with the frozen font-size mapping",
+    "percentiles": {
+      "p85": 169.20000000000005
+    },
+    "candidate_count": 17,
+    "candidate_pool_by_ring": {
+      "0-5": [
+        {
+          "place_id": "_05DcCQmCP5aGnfCnI4r9Q",
+          "name": "Capital One Café",
+          "review_count": 178,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "aL53puqxtcR1KZrrj4U7Jw",
+          "name": "Farmer's Keep",
+          "review_count": 205,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "F6SuJfk4bTxVNDbJR-tn-A",
+          "name": "Apple Walnut Street",
+          "review_count": 219,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "NjD-V9pdH7_V8Y8PGl-csw",
+          "name": "Townsend",
+          "review_count": 246,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "9_B5sCqKBOKDAmYpByiFFg",
+          "name": "Branzino Italian Ristorante",
+          "review_count": 331,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "vuE1iseFrgNPumUEfHIZZQ",
+          "name": "JJ Thai Cuisine",
+          "review_count": 376,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "30cpm1uq6xcQCmN6JTrB8w",
+          "name": "Luke's Lobster Rittenhouse",
+          "review_count": 1161,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        }
+      ],
+      "5-10": [
+        {
+          "place_id": "T8NWs6flR26edfhhwJNhNA",
+          "name": "Sahara Grill",
+          "review_count": 322,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "V8we7-uCa-SouadZmZ9Ieg",
+          "name": "The Cheesecake Factory",
+          "review_count": 381,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa",
+          "review_count": 476,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Shopping"
+        },
+        {
+          "place_id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse",
+          "review_count": 697,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        }
+      ],
+      "10-15": [
+        {
+          "place_id": "zAxWNkDWBvgNfIwTAyCBMw",
+          "name": "Zio's Brick Oven Pizzeria",
+          "review_count": 193,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "7n0qmplNMqPLkcRfI2_ieA",
+          "name": "Minar Palace",
+          "review_count": 203,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "eqNutOMnPqKa9QDAY6KfEw",
+          "name": "J'aime French Bakery",
+          "review_count": 310,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "oGMwCmV1EQZgCdylAbK9ow",
+          "name": "Rex at the Royal",
+          "review_count": 471,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        },
+        {
+          "place_id": "lWedWkinrM5j13pyimbpbA",
+          "name": "Miles Table",
+          "review_count": 514,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Restaurants"
+        }
+      ],
+      "15-20": [
+        {
+          "place_id": "ysvzP0VvMTrGmUClKJ3img",
+          "name": "Ms Tootsie's RBL",
+          "review_count": 612,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Restaurants"
+        }
+      ]
+    },
+    "pairing_with_T3": "prefer_same_ring; choose T4 candidate with closest target-name length, break ties with stable seed",
+    "display_title": null
+  },
+  "T5": {
+    "prompt_template": "请在图中选择【{target_category}】类别中评论数最高的地点。",
+    "target_pool": [
+      "Attractions & Landmarks",
+      "Restaurants",
+      "Hotels & Travel",
+      "Shopping"
+    ],
+    "randomization": "stable_seed_uniform_category",
+    "answer_type": "click_1_place",
+    "scoring_rule": "EXACT_PLACE_ID",
+    "answers_by_category": {
+      "Attractions & Landmarks": {
+        "count": 8,
+        "correct_place": {
+          "place_id": "UwkrmLk--LT65HndB1Odhw",
+          "name": "Pennsylvania Academy of Fine Arts",
+          "review_count": 56,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Attractions & Landmarks"
+        },
+        "runner_up": {
+          "place_id": "t37dsDBpe65qUb81OSFr-g",
+          "name": "Philadelphia Theatre Company",
+          "review_count": 32,
+          "walking_time": 15,
+          "ring": "10-15",
+          "ring_label": "10–15 min",
+          "formal_category": "Attractions & Landmarks"
+        }
+      },
+      "Restaurants": {
+        "count": 68,
+        "correct_place": {
+          "place_id": "30cpm1uq6xcQCmN6JTrB8w",
+          "name": "Luke's Lobster Rittenhouse",
+          "review_count": 1161,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Restaurants"
+        },
+        "runner_up": {
+          "place_id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse",
+          "review_count": 697,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Restaurants"
+        }
+      },
+      "Hotels & Travel": {
+        "count": 8,
+        "correct_place": {
+          "place_id": "EaBgGhjd8rB9KVvCXKaiAw",
+          "name": "Aloft Philadelphia Downtown",
+          "review_count": 104,
+          "walking_time": 20,
+          "ring": "15-20",
+          "ring_label": "15–20 min",
+          "formal_category": "Hotels & Travel"
+        },
+        "runner_up": {
+          "place_id": "toEYTrafM81UMo2GyCSxFw",
+          "name": "Cambria Hotel Philadelphia Downtown Center City",
+          "review_count": 84,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Hotels & Travel"
+        }
+      },
+      "Shopping": {
+        "count": 29,
+        "correct_place": {
+          "place_id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa",
+          "review_count": 476,
+          "walking_time": 10,
+          "ring": "5-10",
+          "ring_label": "5–10 min",
+          "formal_category": "Shopping"
+        },
+        "runner_up": {
+          "place_id": "F6SuJfk4bTxVNDbJR-tn-A",
+          "name": "Apple Walnut Street",
+          "review_count": 219,
+          "walking_time": 5,
+          "ring": "0-5",
+          "ring_label": "0–5 min",
+          "formal_category": "Shopping"
+        }
+      }
+    },
+    "display_title": null
+  },
+  "ui": {
+    "show_task_name": false,
+    "task_counter_template": "Task {index} / 5",
+    "show_internal_condition_name": false,
+    "legend_position": "right_panel_after_status",
+    "legend_mode": "compact_runtime_derived_from_mounted_svg"
+  }
+}

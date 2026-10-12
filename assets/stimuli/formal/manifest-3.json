@@ -1,0 +1,71 @@
+{
+  "stimulus_id": "center-01",
+  "freeze_schema_version": "1.0.0",
+  "source_status": "integration_ready",
+  "frozen": true,
+  "runtime_layout": false,
+  "runtime_random_sampling": false,
+  "export_source": "current-authoring-layout",
+  "center": {
+    "name": "Rittenhouse Square Park",
+    "lng": -75.171888,
+    "lat": 39.949479
+  },
+  "center_label_icon": {
+    "enabled": false,
+    "type": "explore-origin",
+    "size": 14,
+    "gap": 3,
+    "colorMode": "follow-text",
+    "color": "#172033",
+    "color_mode": "follow-text"
+  },
+  "transport_mode": "walking",
+  "time_thresholds_min": [
+    5,
+    10,
+    15,
+    20
+  ],
+  "visible_label_count": 113,
+  "per_ring_visible_counts": {
+    "0-5": 30,
+    "5-10": 30,
+    "10-15": 30,
+    "15-20": 23
+  },
+  "viewBox": "0 0 2145 2145",
+  "legend": {
+    "included": true,
+    "model_version": "legend-v1",
+    "color_mode": "type",
+    "items": [
+      "Text size · Review count",
+      "POI",
+      "POI",
+      "5 reviews",
+      "1,161 reviews",
+      "Text color · Yelp category",
+      "Attractions & Landmarks",
+      "8",
+      "Restaurants",
+      "68",
+      "Hotels & Travel",
+      "8",
+      "Shopping",
+      "29"
+    ]
+  },
+  "export_composition": {
+    "preset": "bottom-right",
+    "scaleMode": "auto-max",
+    "padding": 60,
+    "gap": 28,
+    "legendScale": 1,
+    "freezeIncludeLegend": true,
+    "downloadIncludeLegend": true,
+    "resolvedScale": 1.3,
+    "resolvedCollisionCount": 0
+  },
+  "exported_at": "2026-10-10T19:43:05.606Z"
+}

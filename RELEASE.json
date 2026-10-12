@@ -1,0 +1,14 @@
+{
+  "questionnaireVersion": "questionnaire-v1.0.0",
+  "datasetId": "rittenhouse-fixed-v1",
+  "stimulusVersion": "rittenhouse-formal-v1",
+  "taskPoolVersion": "rittenhouse-formal-task-pool-v4",
+  "poiCount": 113,
+  "ringDistribution": {
+    "0-5": 30,
+    "5-10": 30,
+    "10-15": 30,
+    "15-20": 23
+  },
+  "releaseStatus": "frozen"
+}

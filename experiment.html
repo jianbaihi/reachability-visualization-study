@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+    <title>可达性地图可视化研究问卷</title>
+  <link rel="stylesheet" href="assets/experiment.css" />
+  <link rel="stylesheet" href="assets/questionnaire-step13.css?v=questionnaire-v1.0.0" />
+    <link rel="stylesheet" href="assets/background.css" />
+    <link rel="stylesheet" href="assets/tutorial.css" />
+    <link rel="stylesheet" href="assets/task-t1.css" />
+    <link rel="stylesheet" href="assets/task-t1-direct.css" />
+    <link rel="stylesheet" href="assets/task-ui-consistency.css" />
+    <link rel="stylesheet" href="assets/previs.css" />
+    <link rel="stylesheet" href="assets/questionnaire-acceptance.css" />
+    <link rel="stylesheet" href="assets/questionnaire-step13c.css?v=questionnaire-v1.0.0" />
+    <link rel="stylesheet" href="assets/questionnaire-step13c7.css?v=questionnaire-v1.0.0" />
+  </head>
+  <body>
+    <main class="experiment-shell" id="app">
+      <nav class="experiment-progress" aria-label="实验进度"><ol>
+        <li class="active" aria-current="step"><span>1</span><b>欢迎</b></li><li><span>2</span><b>基础信息</b></li><li><span>3</span><b>实验说明</b></li><li><span>4</span><b>任务实验</b></li><li><span>5</span><b>主观问卷</b></li><li><span>6</span><b>完成</b></li>
+      </ol></nav>
+      <section id="welcome" class="welcome-card" aria-labelledby="welcome-title">
+        <div class="welcome-copy"><div class="eyebrow" aria-hidden="true"></div><header><h1 id="welcome-title">可达性地图可视化研究问卷</h1><p class="subtitle">Reachability Visualization Study</p><p class="intro">本研究旨在探索一种新的可达性地图可视化表达方式，并评估其在空间认知与信息获取任务中的使用效果。您的参与将为相关研究提供重要参考。</p></header>
+          <div class="welcome-features">
+            <article><span class="feature-icon" aria-hidden="true">◎</span><div><h2>研究目的</h2><p>评估可达性地图的可视化表达与用户认知效果</p></div></article>
+            <article><span class="feature-icon" aria-hidden="true">◷</span><div><h2>预计时长</h2><p>约 10–15 分钟</p></div></article>
+            <article><span class="feature-icon" aria-hidden="true">◇</span><div><h2>匿名参与</h2><p>不收集姓名、邮箱或学号等个人身份信息</p></div></article>
+            <article><span class="feature-icon" aria-hidden="true">▤</span><div><h2>设备建议</h2><p>建议使用 1280×720 及以上分辨率的电脑浏览器</p></div></article>
+          </div>
+          <button class="primary-action" data-next="background" type="button">开始实验 <span aria-hidden="true">→</span></button>
+        </div>
+        <figure class="welcome-preview welcome-carousel" aria-label="可达性地图示意轮播">
+          <img id="welcome-carousel-image" src="assets/welcome/v2/welcome-01-mono.png?v=rittenhouse-formal-v1" alt="Rittenhouse Square Park 单色标签云" />
+          <div class="welcome-carousel-dots" role="tablist" aria-label="示意图切换">
+            <button type="button" class="is-active" data-welcome-slide="0" aria-label="单色示意图"></button>
+            <button type="button" data-welcome-slide="1" aria-label="分级设色示意图"></button>
+            <button type="button" data-welcome-slide="2" aria-label="按类型设色示意图"></button>
+          </div>
+          <figcaption class="sr-only">非正式示意图，仅用于介绍可达性地图视觉形式，不属于正式实验刺激。</figcaption>
+        </figure>
+      </section>
+      <section id="background" class="background-page hidden" aria-labelledby="background-title">
+        <header class="compact-header"><button class="back-icon" data-next="welcome" type="button" aria-label="返回欢迎页">←</button><strong>可达性地图可视化研究问卷</strong><span class="anonymous-pill">◷ 匿名参与</span></header>
+        <div class="background-card"><aside class="background-preview"><div class="preview-heading"><span class="feature-icon" aria-hidden="true">♙</span><div><h1>基础信息</h1><p>以下信息仅用于描述参与者群体，不收集个人身份信息。</p></div></div><img src="assets/welcome/v2/welcome-01-mono.png?v=rittenhouse-formal-v1" alt="Rittenhouse Square Park 单色标签云" /><div class="background-meta"><span><b>◇</b><strong>匿名参与</strong><small>不收集个人信息</small></span><span><b>◷</b><strong>约 10–15 分钟</strong><small>预计时长</small></span><span><b>▤</b><strong>建议使用</strong><small>1280×720 及以上分辨率的电脑浏览器</small></span></div></aside>
+          <div class="background-form"><span class="step-kicker">Step 2 / 6</span><h1 id="background-title">基础信息</h1><p class="form-intro">以下信息仅用于描述参与者群体，不收集个人身份信息。</p><form id="background-form" novalidate>
+            <div class="background-field"><label for="education-level"><b>1. 当前/最高教育阶段</b><small>请选择最符合您情况的选项。</small></label><select id="education-level" data-field="education_level" aria-describedby="education-level-error" required><option value="" selected disabled>请选择</option><option value="undergraduate_or_below">本科在读或以下</option><option value="undergraduate">本科毕业</option><option value="master">硕士在读</option><option value="master_graduated">硕士毕业</option><option value="doctorate_or_above">博士在读或以上</option><option value="other">其他 / 不愿回答</option></select><em id="education-level-error" class="field-error"></em></div>
+            <div class="background-field"><label for="discipline-group"><b>2. 主要专业领域</b><small>请选择最接近您专业背景的领域。</small></label><select id="discipline-group" data-field="discipline_group" aria-describedby="discipline-group-error" required><option value="" selected disabled>请选择</option><option value="geo_gis_mapping">地理 / 地图 / GIS / 测绘</option><option value="planning_architecture_landscape">城乡规划 / 建筑 / 景观 / 交通</option><option value="computer_data">计算机 / 数据科学 / 信息技术</option><option value="design">设计 / 视觉传达 / 数字媒体</option><option value="social_humanities">社会科学 / 管理 / 人文</option><option value="natural_engineering">自然科学 / 其他工程领域</option><option value="other">其他 / 跨学科</option></select><em id="discipline-group-error" class="field-error"></em></div>
+            <div class="background-field"><label for="gis-experience"><b>3. GIS / 地图学相关经验</b><small>请选择您的相关经验水平。</small></label><select id="gis-experience" data-field="gis_experience" aria-describedby="gis-experience-error" required><option value="" selected disabled>请选择</option><option value="none">无</option><option value="concepts">仅了解概念</option><option value="course_or_project">有课程或少量使用经验</option><option value="frequent_project">经常使用 / 有项目经验</option><option value="professional">专业或研究级经验</option></select><em id="gis-experience-error" class="field-error"></em></div>
+            <div class="background-field"><label for="visualization-experience"><b>4. 数据可视化相关经验</b><small>请选择您的相关经验水平。</small></label><select id="visualization-experience" data-field="visualization_experience" aria-describedby="visualization-experience-error" required><option value="" selected disabled>请选择</option><option value="none">无</option><option value="concepts">仅了解概念</option><option value="course_or_project">有课程或少量制作经验</option><option value="frequent_project">经常制作 / 有项目经验</option><option value="professional">专业或研究级经验</option></select><em id="visualization-experience-error" class="field-error"></em></div>
+            <div class="background-actions"><button class="secondary-action" data-next="welcome" type="button">← 上一步</button><button class="primary-action compact" id="background-continue" type="submit">继续 <span aria-hidden="true">→</span></button></div>
+          </form></div>
+        </div>
+      </section>
+      <section id="tutorial" class="tutorial-page hidden" aria-labelledby="tutorial-title"><header class="compact-header"><button class="back-icon" data-next="background" type="button" aria-label="返回基础信息">←</button><strong>可达性地图可视化研究问卷</strong><span class="anonymous-pill">Step 3 / 6</span></header><div class="tutorial-card"><aside class="tutorial-preview instruction-map"><img src="assets/welcome/v2/welcome-02-time.png?v=rittenhouse-formal-v1" alt="Rittenhouse Square Park 步行时间分级标签云" /><div class="instruction-badge">① 中心位置<br><small>本次探索的出发位置</small></div></aside><div class="tutorial-content"><span class="step-kicker">Step 3 / 6</span><h1 id="tutorial-title">实验说明</h1><p class="form-intro">正式任务开始前，请先了解如何阅读可达性地图以及如何完成任务。</p><div class="explanation-list"><article><span>①</span><div><h2>中心位置</h2><p>地图中心表示本次探索的出发位置。</p></div></article><article><span>②</span><div><h2>步行时间圈层</h2><p>由内向外表示更长的步行时间。</p></div></article><article><span>③</span><div><h2>地点标签</h2><p>每个文字代表一个地点。</p></div></article><article><span>④</span><div><h2>字号与评论数量</h2><p>字号越大表示 Yelp 评论数越多。</p></div></article><article><span>⑤</span><div><h2>正式任务与交互</h2><p>进入任务后，请根据右侧问题点击地图中的地点标签作答。</p></div></article></div><div class="tutorial-actions"><button class="secondary-action" data-next="background" type="button">← 上一步</button><button class="primary-action compact" data-next="part-a" type="button">我已了解，开始正式任务 <span aria-hidden="true">→</span></button></div></div></div></section>
+      <section id="part-a" class="experiment hidden"><div class="visual"><svg id="stimulus" viewBox="0 0 1000 800" role="img" aria-label="固定可达性地图"></svg><div id="stimulus-legend-overlay" class="stimulus-legend-overlay" aria-hidden="true"></div><div id="stimulus-mask" class="stimulus-mask"><div id="mask-message">正在准备任务…</div><div id="countdown" class="countdown-display" aria-live="assertive"></div></div></div><aside class="tasks"><div class="task-kicker">Task 1 / 5</div><p id="task-prompt" class="task-prompt">正在生成正式题目…</p><div id="task-status" class="task-status">正在准备可视化…</div><div id="task-content"></div><button id="ready" class="primary-action task-action" disabled type="button">准备开始 <span aria-hidden="true">→</span></button></aside></section>
+      <section id="previs" class="previs-page hidden" aria-labelledby="previs-title"><header class="compact-header"><strong>可达性地图可视化研究问卷</strong><span class="anonymous-pill">Step 5 / 6</span></header><div class="previs-card"><aside class="previs-reference"><img id="previs-reference-image" src="assets/welcome/v2/welcome-02-time.png?v=rittenhouse-formal-v1" alt="步行时间设色参考图"/><div class="previs-reference-actions"><button type="button" data-previs-image="time" aria-pressed="true">时间设色</button><button type="button" data-previs-image="category" aria-pressed="false">类别设色</button></div></aside><div class="previs-content"><h1 id="previs-title">主观评价 1 / 3：易理解性</h1><p class="form-intro">请根据刚才完成任务时的实际体验作答。</p><div id="previs-form"></div><div class="previs-actions"><button id="previs-previous" class="secondary-action" type="button">上一组</button><button id="previs-next" class="primary-action compact" type="button">下一组 →</button><button id="previs-submit" class="primary-action compact hidden" type="button">提交问卷 →</button></div></div></div></section>
+      <section id="completion" class="screen hidden"><span class="step-kicker">Step 6 / 6</span><h1>感谢参与</h1><p>本次实验已完成。感谢您对本研究的支持。</p><p>✓ 已完成全部任务<br />✓ 已完成主观问卷</p><button id="download-results" class="primary-action compact" type="button">下载实验结果.xlsx</button><p id="export-status" class="form-intro" aria-live="polite"></p></section>
+    </main>
+    <script src="assets/questionnaire-content.js?v=freeze-v1"></script>
+    <script src="assets/frozen-stimulus-controller.js?v=questionnaire-v1.0.0"></script>
+    <script src="assets/vendor/xlsx-js-style.min.js?v=1.2.0"></script>
+    <script src="assets/vendor/jszip.min.js?v=3.10.1"></script>
+    <script src="assets/survey-xlsx-export.js?v=questionnaire-v1.0.0"></script>
+    <script src="assets/formal-task-generator-v4.js?v=questionnaire-v1.0.0"></script>
+    <script src="assets/experiment.js?v=questionnaire-v1.0.0"></script>
+  </body>
+</html>

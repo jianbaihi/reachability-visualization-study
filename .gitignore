@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+*.local
+
+survey-results/
+release-audit/
+test-results/
+downloads/
+
+*.xlsx

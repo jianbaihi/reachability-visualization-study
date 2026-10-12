@@ -1,0 +1,2143 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "rittenhouse-fixed-v1",
+  "lockedAt": "2026-10-10T18:58:21.697Z",
+  "signature": "{\"center_id\":\"\",\"center_lng\":-75.171888,\"center_lat\":39.949479,\"filter_mode\":\"isochrone\",\"isochrone_profile\":\"walking\",\"thresholds\":[5,10,15,20],\"per_ring_limits\":[30,30,30,30]}",
+  "center": {
+    "name": "Rittenhouse Square Park",
+    "lng": -75.171888,
+    "lat": 39.949479
+  },
+  "thresholds": [
+    5,
+    10,
+    15,
+    20
+  ],
+  "pois": [
+    {
+      "place_id": "v45E6gg6MrAziTepkiWByA",
+      "name": "Harper's Garden",
+      "review_count": 516,
+      "rating": null,
+      "primary_category": "Wine Bars",
+      "categories": [
+        "Wine Bars",
+        "Bars",
+        "American (New)",
+        "Nightlife",
+        "Tapas/Small Plates",
+        "Cocktail Bars",
+        "Restaurants",
+        "Beer Gardens",
+        "Salad"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "qBwOLby0sOJd3QG1o76W2w",
+      "name": "Veda - Modern Indian Bistro",
+      "review_count": 465,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Tapas/Small Plates",
+        "Bars",
+        "Nightlife",
+        "Cocktail Bars",
+        "Indian",
+        "Breakfast & Brunch"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "18790ccUVHejWqCmkoSJjA",
+      "name": "Casta Diva",
+      "review_count": 148,
+      "rating": null,
+      "primary_category": "Italian",
+      "categories": [
+        "Italian",
+        "Restaurants"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "0KEMPs7BD_WHI6zGpDcKjw",
+      "name": "Food & Friends",
+      "review_count": 167,
+      "rating": null,
+      "primary_category": "Specialty Food",
+      "categories": [
+        "Specialty Food",
+        "Restaurants",
+        "Delis",
+        "Beer",
+        "Wine & Spirits",
+        "Fruits & Veggies",
+        "Grocery",
+        "Convenience Stores",
+        "Food"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "peeXG1Ra-DClPQv14jvKvg",
+      "name": "Square on Square",
+      "review_count": 246,
+      "rating": null,
+      "primary_category": "Seafood",
+      "categories": [
+        "Seafood",
+        "Chinese",
+        "Restaurants",
+        "Tex-Mex",
+        "Asian Fusion",
+        "Sushi Bars",
+        "American (New)",
+        "American (Traditional)",
+        "Vegetarian",
+        "Italian"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "fWMdHjV4G6z8jFW-hf-mIw",
+      "name": "Tselaine",
+      "review_count": 68,
+      "rating": null,
+      "primary_category": "Hats",
+      "categories": [
+        "Hats",
+        "Fashion",
+        "Bridal",
+        "Jewelry",
+        "Shopping",
+        "Accessories"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "GltVrzwcDYT9Om8tW6H3FA",
+      "name": "Fat Jack's Comicrypt",
+      "review_count": 48,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Comic Books",
+        "Books",
+        "Mags",
+        "Music & Video",
+        "Bookstores"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "80CuLvezLk7SkkzWbcv1Dg",
+      "name": "C19 Cichetteria Venezia",
+      "review_count": 116,
+      "rating": null,
+      "primary_category": "Italian",
+      "categories": [
+        "Italian",
+        "Bars",
+        "Nightlife",
+        "Restaurants",
+        "Wine Bars"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "uI5k9lJkWlKi6OUW5yYIpQ",
+      "name": "Benjamin Lovell Shoes",
+      "review_count": 46,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Shoe Stores",
+        "Fashion"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "BjVRG3OIeEp8X_x5tv8h5w",
+      "name": "City Sports",
+      "review_count": 57,
+      "rating": null,
+      "primary_category": "Sporting Goods",
+      "categories": [
+        "Sporting Goods",
+        "Shopping",
+        "Fitness/Exercise Equipment",
+        "Outdoor Gear"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "KyupDWgHg9juUPvQrRKDBw",
+      "name": "Indochino",
+      "review_count": 58,
+      "rating": null,
+      "primary_category": "Fashion",
+      "categories": [
+        "Fashion",
+        "Formal Wear",
+        "Men's Clothing",
+        "Shopping",
+        "Bespoke Clothing",
+        "Accessories"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "v92xgVl-BH_pQM486ea-9g",
+      "name": "Greens and Grains",
+      "review_count": 14,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Vegan"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "CT2QgcDyqc5EmJ4HT18uSQ",
+      "name": "Roxy Theatre",
+      "review_count": 62,
+      "rating": null,
+      "primary_category": "Cinema",
+      "categories": [
+        "Cinema",
+        "Arts & Entertainment"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "8Wqjjtq9PAK7EulkmjJtDA",
+      "name": "Remedy Tea Bar",
+      "review_count": 32,
+      "rating": null,
+      "primary_category": "Food",
+      "categories": [
+        "Food",
+        "Tea Rooms",
+        "Restaurants",
+        "Coffee & Tea"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "ydY1FKBgpgXvhxpVPMbinA",
+      "name": "Numa",
+      "review_count": 30,
+      "rating": null,
+      "primary_category": "Food",
+      "categories": [
+        "Food",
+        "Restaurants",
+        "Sushi Bars",
+        "Japanese"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "tuBPp6lhttLhCPZ8zHh-og",
+      "name": "Crisp",
+      "review_count": 39,
+      "rating": null,
+      "primary_category": "Event Planning & Services",
+      "categories": [
+        "Event Planning & Services",
+        "Vegetarian",
+        "Caterers",
+        "Middle Eastern",
+        "Mediterranean",
+        "Restaurants"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "NbMzjtTsatnwn49amD-B2Q",
+      "name": "Coda",
+      "review_count": 91,
+      "rating": null,
+      "primary_category": "Performing Arts",
+      "categories": [
+        "Performing Arts",
+        "Nightlife",
+        "Dance Clubs",
+        "Arts & Entertainment",
+        "Bars",
+        "Music Venues"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "JclXOdPHF1Kkglcon_B31w",
+      "name": "Dîner en Blanc",
+      "review_count": 12,
+      "rating": null,
+      "primary_category": "Local Flavor",
+      "categories": [
+        "Local Flavor",
+        "Restaurants",
+        "Festivals",
+        "Diners",
+        "Arts & Entertainment"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "5eldbLrF_oodWvu1VuEP8w",
+      "name": "1925 Cocktail Lounge",
+      "review_count": 47,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Bars",
+        "Adult Entertainment",
+        "Lounges",
+        "American (New)",
+        "Nightlife"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "mcwEsGHIzaDmPrUtOCUFuQ",
+      "name": "Henry A. Davidsen, Master Tailors & Image Consultants",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Local Services",
+      "categories": [
+        "Local Services",
+        "Men's Clothing",
+        "Women's Clothing",
+        "Accessories",
+        "Personal Shopping",
+        "Shopping",
+        "Sewing & Alterations",
+        "Bespoke Clothing",
+        "Formal Wear",
+        "Fashion"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "IBXxheRBebb5lyrPGIWshw",
+      "name": "Gardenia",
+      "review_count": 13,
+      "rating": null,
+      "primary_category": "Buffets",
+      "categories": [
+        "Buffets",
+        "Arts & Entertainment",
+        "Art Galleries",
+        "Restaurants",
+        "American (Traditional)",
+        "Shopping"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "7we6aFgMlWGPxo9Buh833g",
+      "name": "Brilliant Earth",
+      "review_count": 10,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Jewelry"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "PNtOGLx7AowVstMVDaHn0Q",
+      "name": "Utrecht Art Supplies",
+      "review_count": 8,
+      "rating": null,
+      "primary_category": "Art Supplies",
+      "categories": [
+        "Art Supplies",
+        "Arts & Crafts",
+        "Shopping"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "8d7ogv-SF9p5HoESZ7TmYg",
+      "name": "Whodunit",
+      "review_count": 14,
+      "rating": null,
+      "primary_category": "Books",
+      "categories": [
+        "Books",
+        "Mags",
+        "Music & Video",
+        "Bookstores",
+        "Shopping"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "K3lXNfqteOz_ksfqRIkT-A",
+      "name": "Raindrop Cafe",
+      "review_count": 9,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Sandwiches",
+        "Juice Bars & Smoothies",
+        "Food"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "4bx6V3IBe-J_BrrpLMjTJw",
+      "name": "Gianna Jr's",
+      "review_count": 11,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Food",
+        "Vegetarian",
+        "Vegan"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "Eu2wjbfHBUfXgLVDq5NrsQ",
+      "name": "Jacques Ferber",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Fashion",
+        "Women's Clothing"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "pbHUglsehzeP4hPZX3IoaA",
+      "name": "A.Cafe AKA Cafe",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "American (New)",
+      "categories": [
+        "American (New)",
+        "Restaurants"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "s_nwnE9IDzSolkPp2fD9PA",
+      "name": "GNC",
+      "review_count": 5,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Vitamins & Supplements",
+        "Health Markets",
+        "Specialty Food",
+        "Food"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "75pheRYoJf0hdWs9pqLE9A",
+      "name": "Snow White",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "American (Traditional)"
+      ],
+      "walking_time": 5,
+      "ring_index": 0,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "X5fWO9e82EICHXzzs6eQMg",
+      "name": "Rescue Spa",
+      "review_count": 476,
+      "rating": null,
+      "primary_category": "Makeup Artists",
+      "categories": [
+        "Makeup Artists",
+        "Laser Hair Removal",
+        "Cosmetics & Beauty Supply",
+        "Hair Removal",
+        "Day Spas",
+        "Medical Spas",
+        "Shopping",
+        "Beauty & Spas",
+        "Skin Care",
+        "Massage Therapy",
+        "Hair Salons",
+        "Health & Medical"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "mzTTdvQGkUHZ8ii7OnZC5w",
+      "name": "Trader Joe's",
+      "review_count": 494,
+      "rating": null,
+      "primary_category": "Beer",
+      "categories": [
+        "Beer",
+        "Wine & Spirits",
+        "Shopping",
+        "Grocery",
+        "Florists",
+        "Food",
+        "Flowers & Gifts",
+        "Specialty Food"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "NYj8uB9-u0SmRMNDNktb1g",
+      "name": "Oscar's Tavern",
+      "review_count": 328,
+      "rating": null,
+      "primary_category": "Nightlife",
+      "categories": [
+        "Nightlife",
+        "Restaurants",
+        "Bars",
+        "Dive Bars"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "T8NWs6flR26edfhhwJNhNA",
+      "name": "Sahara Grill",
+      "review_count": 322,
+      "rating": null,
+      "primary_category": "Mediterranean",
+      "categories": [
+        "Mediterranean",
+        "Middle Eastern",
+        "Restaurants"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "7lwe7n-Yc-V9E_HfLAeylg",
+      "name": "Pub & Kitchen",
+      "review_count": 615,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Pubs",
+        "Food",
+        "Bars",
+        "American (New)",
+        "Nightlife"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "17MK8qagV374AuUA4sXuIA",
+      "name": "XIX Nineteen",
+      "review_count": 611,
+      "rating": null,
+      "primary_category": "Cafes",
+      "categories": [
+        "Cafes",
+        "Lounges",
+        "Bars",
+        "American (New)",
+        "American (Traditional)",
+        "Restaurants",
+        "Nightlife",
+        "Seafood"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "hAcBP6zU9qAs6o3cbUW6MA",
+      "name": "bāo•logy",
+      "review_count": 183,
+      "rating": null,
+      "primary_category": "Food",
+      "categories": [
+        "Food",
+        "Restaurants",
+        "Taiwanese",
+        "Street Vendors"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "M2RjW47j_aL4qvBYcJEYtw",
+      "name": "Gusto Pizzeria",
+      "review_count": 171,
+      "rating": null,
+      "primary_category": "Sandwiches",
+      "categories": [
+        "Sandwiches",
+        "Restaurants",
+        "Italian",
+        "Pizza"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "842klWrQcZi4K4rLC10YKA",
+      "name": "First Unitarian Church",
+      "review_count": 86,
+      "rating": null,
+      "primary_category": "Religious Organizations",
+      "categories": [
+        "Religious Organizations",
+        "Music Venues",
+        "Churches",
+        "Venues & Event Spaces",
+        "Arts & Entertainment",
+        "Nightlife",
+        "Event Planning & Services"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "XT1xF_7s3bJdm2UOrTMjPQ",
+      "name": "Halal Gyro Express",
+      "review_count": 41,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Food",
+        "Imported Food",
+        "Halal",
+        "Specialty Food",
+        "Street Vendors",
+        "Ethnic Food",
+        "Middle Eastern",
+        "Gluten-Free"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "t8xJ1hwM41vYwe7LxIyqaw",
+      "name": "Sally",
+      "review_count": 37,
+      "rating": null,
+      "primary_category": "Wine Bars",
+      "categories": [
+        "Wine Bars",
+        "Pizza",
+        "Nightlife",
+        "Tapas/Small Plates",
+        "Bars",
+        "Beverage Store",
+        "Food",
+        "Restaurants"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "v7KzbLoHo9zC2xRpWEEp0A",
+      "name": "A Mandarin Restaurant",
+      "review_count": 87,
+      "rating": null,
+      "primary_category": "Thai",
+      "categories": [
+        "Thai",
+        "Restaurants",
+        "Chinese"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "dFAHHp-_MpKNz6PqaJYVjA",
+      "name": "Cafe Spice Express",
+      "review_count": 45,
+      "rating": null,
+      "primary_category": "Fast Food",
+      "categories": [
+        "Fast Food",
+        "Restaurants",
+        "Indian",
+        "Pakistani"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "egk4EEv8KcmI6ZFyUieVeQ",
+      "name": "Four Seasons Hotel Philadelphia at Comcast Center",
+      "review_count": 33,
+      "rating": null,
+      "primary_category": "Day Spas",
+      "categories": [
+        "Day Spas",
+        "Beauty & Spas",
+        "Event Planning & Services",
+        "Hotels",
+        "Hotels & Travel"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "j2-xpIyDjmtEA4QFQYN16w",
+      "name": "Ron Bennett Music",
+      "review_count": 15,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Musical Instruments & Teachers",
+        "Tutoring Centers",
+        "Education"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "f03SYXIT37YmarHDZd1wMA",
+      "name": "Banana Republic",
+      "review_count": 41,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Shoe Stores",
+        "Women's Clothing",
+        "Men's Clothing",
+        "Fashion",
+        "Accessories"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "c6NQy_kMo031AE2k5IPT4Q",
+      "name": "Striped Bass",
+      "review_count": 17,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Seafood"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "2BRbu3cBbH2bCgzN3DVc8w",
+      "name": "Table 31",
+      "review_count": 127,
+      "rating": null,
+      "primary_category": "Steakhouses",
+      "categories": [
+        "Steakhouses",
+        "Italian",
+        "Restaurants"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "iydOdxf9QnI6tIvyWXxPqQ",
+      "name": "Kurry Shack",
+      "review_count": 15,
+      "rating": null,
+      "primary_category": "Vegetarian",
+      "categories": [
+        "Vegetarian",
+        "Indian",
+        "Restaurants",
+        "Halal"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "OmZZS72yQcPyqEDPCA3EVA",
+      "name": "Golden Lake",
+      "review_count": 51,
+      "rating": null,
+      "primary_category": "Asian Fusion",
+      "categories": [
+        "Asian Fusion",
+        "Restaurants",
+        "Chinese"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "_LtJsAcsygWR54vxvmChEw",
+      "name": "Bloomingdale's Outlet - Liberty Place",
+      "review_count": 25,
+      "rating": null,
+      "primary_category": "Men's Clothing",
+      "categories": [
+        "Men's Clothing",
+        "Fashion",
+        "Department Stores",
+        "Shopping",
+        "Outlet Stores",
+        "Women's Clothing"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "ZijcWgADCYVwLOOGPkd3tw",
+      "name": "Rite Aid",
+      "review_count": 23,
+      "rating": null,
+      "primary_category": "Convenience Stores",
+      "categories": [
+        "Convenience Stores",
+        "Photography Stores & Services",
+        "Shopping",
+        "Drugstores",
+        "Food"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "Mg1b-6BjqQEiaGAw20FTHw",
+      "name": "Inject Beauty",
+      "review_count": 31,
+      "rating": null,
+      "primary_category": "Health & Medical",
+      "categories": [
+        "Health & Medical",
+        "Laser Hair Removal",
+        "Beauty & Spas",
+        "Hair Removal",
+        "Shopping",
+        "Medical Spas",
+        "Cosmetics & Beauty Supply"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "2X6HUYGV7Djr_TFX6uYebA",
+      "name": "Philadelphia Sports Network",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Active Life",
+      "categories": [
+        "Active Life",
+        "Amateur Sports Teams",
+        "Arts & Entertainment",
+        "Social Clubs",
+        "Sports Clubs"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "GXM_Uitc3Ep8CvwEq_kpcQ",
+      "name": "City Garden Chinese Restaurant",
+      "review_count": 29,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Chinese"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "vs0uV4vwkv0eKB5FIyI3ug",
+      "name": "Bain's Deli",
+      "review_count": 12,
+      "rating": null,
+      "primary_category": "Convenience Stores",
+      "categories": [
+        "Convenience Stores",
+        "Sandwiches",
+        "Food",
+        "Restaurants",
+        "Delis"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "TZhCpOoo4TIg7dgftWNKyQ",
+      "name": "W Philadelphia",
+      "review_count": 8,
+      "rating": null,
+      "primary_category": "Hotels",
+      "categories": [
+        "Hotels",
+        "Hotels & Travel",
+        "Event Planning & Services"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "nzZrLZyU9w_4MGBNi7dRiA",
+      "name": "CB2",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Home & Garden",
+        "Home Decor",
+        "Outdoor Furniture Stores",
+        "Furniture Stores"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "QP-LvnkFoesBMCps7HuAWg",
+      "name": "Prestige Movers",
+      "review_count": 15,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Local Services",
+        "Home Services",
+        "Junk Removal & Hauling",
+        "Home & Garden",
+        "Self Storage",
+        "Movers"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "bJHG34ifHUfvY1qQ1S1alw",
+      "name": "Sprint Store",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Mobile Phones",
+      "categories": [
+        "Mobile Phones",
+        "Electronics",
+        "Shopping"
+      ],
+      "walking_time": 10,
+      "ring_index": 1,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "pXRrRf8fDv6yU3xp1E25hA",
+      "name": "Bud & Marilyn's",
+      "review_count": 1303,
+      "rating": null,
+      "primary_category": "Breakfast & Brunch",
+      "categories": [
+        "Breakfast & Brunch",
+        "Nightlife",
+        "Bars",
+        "Restaurants",
+        "American (Traditional)"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "lWedWkinrM5j13pyimbpbA",
+      "name": "Miles Table",
+      "review_count": 514,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Coffee & Tea",
+        "Food",
+        "Breakfast & Brunch",
+        "Event Planning & Services",
+        "American (Traditional)",
+        "Caterers"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "LgAuYz5cQe3zTxuteJ4VyQ",
+      "name": "Fuel Center City",
+      "review_count": 432,
+      "rating": null,
+      "primary_category": "Sandwiches",
+      "categories": [
+        "Sandwiches",
+        "Restaurants",
+        "Cafes",
+        "Vegetarian"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "or_WcjWELDsssk2JruvJcg",
+      "name": "Café Lutecia",
+      "review_count": 199,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Breakfast & Brunch",
+        "French"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "JPfe9B-RLrE5Nz75kcKImQ",
+      "name": "Govinda's Vegetarian",
+      "review_count": 476,
+      "rating": null,
+      "primary_category": "Vegan",
+      "categories": [
+        "Vegan",
+        "Cheesesteaks",
+        "Restaurants",
+        "Vegetarian",
+        "Sandwiches"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "KVFUBgmPEHGUaJNkpMGcLw",
+      "name": "Opa",
+      "review_count": 446,
+      "rating": null,
+      "primary_category": "Mediterranean",
+      "categories": [
+        "Mediterranean",
+        "Greek",
+        "Restaurants",
+        "Tapas/Small Plates"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "LDeHaPK7ShIvMD2zrwH8xQ",
+      "name": "Atlas Hair Company",
+      "review_count": 67,
+      "rating": null,
+      "primary_category": "Hair Salons",
+      "categories": [
+        "Hair Salons",
+        "Men's Hair Salons",
+        "Bridal",
+        "Hair Stylists",
+        "Shopping",
+        "Beauty & Spas",
+        "Barbers",
+        "Hair Extensions"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "lwN9FutfBq81GnGWhj5Mng",
+      "name": "Balkan Express Restaurant",
+      "review_count": 74,
+      "rating": null,
+      "primary_category": "Hungarian",
+      "categories": [
+        "Hungarian",
+        "Mediterranean",
+        "Restaurants"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "xCXGV3wEvYd4xBGx8ZRFQA",
+      "name": "La Va Cafe",
+      "review_count": 201,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Breakfast & Brunch",
+        "Coffee & Tea",
+        "Salad",
+        "Food",
+        "Mediterranean"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "D_JgJY5V54i0EYOdTHmWlg",
+      "name": "Toast",
+      "review_count": 253,
+      "rating": null,
+      "primary_category": "Food",
+      "categories": [
+        "Food",
+        "Restaurants",
+        "Coffee & Tea",
+        "Breakfast & Brunch",
+        "Cafes",
+        "American (New)"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "0wlZLeOAxvxqRrpRlo6PpQ",
+      "name": "Nightmare Before Tinsel",
+      "review_count": 36,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Pop-Up Restaurants",
+        "Nightlife",
+        "Bars"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "QcSUVRH1wJW0qRuZ7A73Mg",
+      "name": "Logan Square Pizza & Grill",
+      "review_count": 73,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Pizza"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "v_LOlXjMbIwqUbK96Nj14w",
+      "name": "Ted's Montana Grill",
+      "review_count": 57,
+      "rating": null,
+      "primary_category": "American (New)",
+      "categories": [
+        "American (New)",
+        "Restaurants"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "c-0PoHHcA6k7y4CxjGH1jw",
+      "name": "Tiki Philly",
+      "review_count": 101,
+      "rating": null,
+      "primary_category": "Nightlife",
+      "categories": [
+        "Nightlife",
+        "Bars",
+        "Restaurants",
+        "Venues & Event Spaces",
+        "Hawaiian",
+        "Tiki Bars",
+        "Event Planning & Services"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "FUMp1kmo3ix5BstG-OW-8Q",
+      "name": "Blind Barber",
+      "review_count": 23,
+      "rating": null,
+      "primary_category": "Beauty & Spas",
+      "categories": [
+        "Beauty & Spas",
+        "Nightlife",
+        "Bars",
+        "American (Traditional)",
+        "Shopping",
+        "Cosmetics & Beauty Supply",
+        "Hair Salons",
+        "Barbers",
+        "Restaurants"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "peg-QfuNihvtk4P1jpuMCQ",
+      "name": "Old Nelson Food Company",
+      "review_count": 33,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Delis",
+        "Convenience Stores",
+        "Food",
+        "Grocery"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "Hj_mWzPoyyX1es-a_x1eXA",
+      "name": "Philadelphia Photographics",
+      "review_count": 25,
+      "rating": null,
+      "primary_category": "Arts & Entertainment",
+      "categories": [
+        "Arts & Entertainment",
+        "Shopping",
+        "Photography Stores & Services"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "n4Ns3xLRhpkRwglwiQGKVA",
+      "name": "Rodeway Inn Center City",
+      "review_count": 119,
+      "rating": null,
+      "primary_category": "Event Planning & Services",
+      "categories": [
+        "Event Planning & Services",
+        "Hotels & Travel",
+        "Hotels"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "5Oidx4OZxCj6Y4SoXQIZsg",
+      "name": "Renaissance Sausage Truck",
+      "review_count": 22,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "American (Traditional)",
+        "Food",
+        "Food Stands",
+        "Specialty Food"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "vC98a0bIcSDVfX3dOuuAkQ",
+      "name": "Yummy Pizza",
+      "review_count": 20,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "American (New)",
+        "Pizza",
+        "American (Traditional)"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "gEnNOVdZmrM7rGLWodm16w",
+      "name": "Better Off Bowling",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Social Clubs",
+      "categories": [
+        "Social Clubs",
+        "Active Life",
+        "Arts & Entertainment",
+        "Bowling"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "jUnLjPEuLON6fpPvpuEAjA",
+      "name": "Frog Burger",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Burgers"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "tbKxiHU5uAfLDkwIxBnLHg",
+      "name": "Club Mousai",
+      "review_count": 5,
+      "rating": null,
+      "primary_category": "Arts & Entertainment",
+      "categories": [
+        "Arts & Entertainment",
+        "Music Venues",
+        "Nightlife",
+        "Dance Clubs"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "DUb37wPM8xzM3HJtniNtOQ",
+      "name": "Marian Anderson Recreation Center",
+      "review_count": 5,
+      "rating": null,
+      "primary_category": "Recreation Centers",
+      "categories": [
+        "Recreation Centers",
+        "Active Life",
+        "Local Flavor"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "KZIuyooXzm7Y0x78YO7n8Q",
+      "name": "Bonte Wafflerie & Cafe",
+      "review_count": 8,
+      "rating": null,
+      "primary_category": "Desserts",
+      "categories": [
+        "Desserts",
+        "Coffee & Tea",
+        "Food",
+        "Restaurants",
+        "Sandwiches",
+        "Bakeries",
+        "Belgian"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "rY3bChlXDbRYKKHmGdLLeA",
+      "name": "Green Village",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Breakfast & Brunch"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "gXy0a9tOQYLGflwRtqmY5A",
+      "name": "Camac",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Gay Bars",
+      "categories": [
+        "Gay Bars",
+        "Bars",
+        "Nightlife",
+        "American (Traditional)",
+        "Restaurants"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "lIvFAGQA5iO9pR10mShG5Q",
+      "name": "Forbidden Planet",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Fashion",
+      "categories": [
+        "Fashion",
+        "Shopping",
+        "Used",
+        "Vintage & Consignment"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "sEIHhcvPyDBiZAdBNBov9g",
+      "name": "Bombay Express",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Indian",
+      "categories": [
+        "Indian",
+        "Pakistani",
+        "Restaurants"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "oWC9N_oufwSJT0cr7ppyBQ",
+      "name": "Philadelphia Taxi",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Hotels & Travel",
+      "categories": [
+        "Hotels & Travel",
+        "Transportation",
+        "Taxis"
+      ],
+      "walking_time": 15,
+      "ring_index": 2,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "ysvzP0VvMTrGmUClKJ3img",
+      "name": "Ms Tootsie's RBL",
+      "review_count": 612,
+      "rating": null,
+      "primary_category": "Soul Food",
+      "categories": [
+        "Soul Food",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "OZnU--KfAdDwJarO8roRig",
+      "name": "Via Bicycle",
+      "review_count": 160,
+      "rating": null,
+      "primary_category": "Bike Repair/Maintenance",
+      "categories": [
+        "Bike Repair/Maintenance",
+        "Shopping",
+        "Bike Rentals",
+        "Active Life",
+        "Sporting Goods",
+        "Local Services",
+        "Bikes"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "jLDwSeoQ_kDQwhnUJQO2yw",
+      "name": "Sansom Kabob House",
+      "review_count": 106,
+      "rating": null,
+      "primary_category": "Soup",
+      "categories": [
+        "Soup",
+        "Vegetarian",
+        "Afghan",
+        "Kebab",
+        "Indian",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "UwkrmLk--LT65HndB1Odhw",
+      "name": "Pennsylvania Academy of Fine Arts",
+      "review_count": 56,
+      "rating": null,
+      "primary_category": "Shopping",
+      "categories": [
+        "Shopping",
+        "Art Schools",
+        "Museums",
+        "Specialty Schools",
+        "Art Galleries",
+        "Arts & Entertainment",
+        "Education",
+        "Adult Education"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "aRyP578y47vwJ4KFIicjCw",
+      "name": "Yellowtail",
+      "review_count": 120,
+      "rating": null,
+      "primary_category": "Thai",
+      "categories": [
+        "Thai",
+        "Japanese",
+        "Sushi Bars",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "EaBgGhjd8rB9KVvCXKaiAw",
+      "name": "Aloft Philadelphia Downtown",
+      "review_count": 104,
+      "rating": null,
+      "primary_category": "Hotels & Travel",
+      "categories": [
+        "Hotels & Travel",
+        "Hotels",
+        "Event Planning & Services",
+        "Venues & Event Spaces"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "cCwNX2r-4hDXPNGwDx2otg",
+      "name": "Six Fishes Healing Arts",
+      "review_count": 21,
+      "rating": null,
+      "primary_category": "Health & Medical",
+      "categories": [
+        "Health & Medical",
+        "Traditional Chinese Medicine",
+        "Massage Therapy",
+        "Massage",
+        "Acupuncture",
+        "Beauty & Spas"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "H2c5e7PfcCg9f9Ew19-xRw",
+      "name": "Sushi Poke",
+      "review_count": 29,
+      "rating": null,
+      "primary_category": "Japanese",
+      "categories": [
+        "Japanese",
+        "Restaurants",
+        "Sushi Bars"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "fWRWzBfQnMcNiaOi5TJVdw",
+      "name": "Cafe V and Kitchen",
+      "review_count": 140,
+      "rating": null,
+      "primary_category": "Food",
+      "categories": [
+        "Food",
+        "Coffee & Tea",
+        "Restaurants",
+        "Cafes"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "T6S3ANFsbrl_1Q6ow-7XYA",
+      "name": "The Gold Standard Cafe",
+      "review_count": 26,
+      "rating": null,
+      "primary_category": "Breakfast & Brunch",
+      "categories": [
+        "Breakfast & Brunch",
+        "American (New)",
+        "Vegetarian",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "___UdvaxCnwsQ7nA1eKZAQ",
+      "name": "PHLASH",
+      "review_count": 41,
+      "rating": null,
+      "primary_category": "Buses",
+      "categories": [
+        "Buses",
+        "Hotels & Travel",
+        "Transportation"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "52KaQ6LSMgzjqhDuHBheJQ",
+      "name": "Frugal Frames",
+      "review_count": 16,
+      "rating": null,
+      "primary_category": "Arts & Crafts",
+      "categories": [
+        "Arts & Crafts",
+        "Framing",
+        "Art Galleries",
+        "Shopping",
+        "Arts & Entertainment"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "Bk_1vsPtOtO0bojfQZQIOw",
+      "name": "Wasabi House",
+      "review_count": 40,
+      "rating": null,
+      "primary_category": "Sushi Bars",
+      "categories": [
+        "Sushi Bars",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "29ThPh6IA69V-SfcwfV9Dg",
+      "name": "Starbucks",
+      "review_count": 48,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Food",
+        "Coffee & Tea"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "f-vB1_GyGBYzHX68xS5Dfw",
+      "name": "Saigon Quy-Bau Restaurant",
+      "review_count": 17,
+      "rating": null,
+      "primary_category": "Chinese",
+      "categories": [
+        "Chinese",
+        "French",
+        "Vietnamese",
+        "Thai",
+        "American (Traditional)",
+        "Asian Fusion",
+        "Restaurants"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "AJzAO951NR1LFaBHojeudg",
+      "name": "Tableau at PAFA",
+      "review_count": 19,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Museums",
+        "Coffee & Tea",
+        "Sandwiches",
+        "Food",
+        "Arts & Entertainment",
+        "Cafes"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "v7RMWJJ48HrX1gI8DXZbew",
+      "name": "Convention Center Parking Facility",
+      "review_count": 18,
+      "rating": null,
+      "primary_category": "Automotive",
+      "categories": [
+        "Automotive",
+        "Parking",
+        "Local Flavor"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "nqkMURJeB7RBi2serBYFNg",
+      "name": "W XYZ Bar",
+      "review_count": 7,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Tapas/Small Plates",
+        "Cocktail Bars",
+        "Bars",
+        "Event Planning & Services",
+        "Venues & Event Spaces",
+        "Nightlife"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "PhJeNe9KRtrek1BP-HaMtA",
+      "name": "Bobby Chez",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Restaurants",
+      "categories": [
+        "Restaurants",
+        "Seafood"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "6wnbyXMDoM_M29zwacAmhQ",
+      "name": "Grilly Cheese",
+      "review_count": 6,
+      "rating": null,
+      "primary_category": "Street Vendors",
+      "categories": [
+        "Street Vendors",
+        "Food Trucks",
+        "Food",
+        "Restaurants",
+        "Sandwiches",
+        "Specialty Food",
+        "Cheese Shops"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "6Bos3UU5heFlqySLcYvwnw",
+      "name": "Budget Car Rental",
+      "review_count": 12,
+      "rating": null,
+      "primary_category": "Hotels & Travel",
+      "categories": [
+        "Hotels & Travel",
+        "Automotive",
+        "Car Rental",
+        "Truck Rental"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "4Peac-dIOM80hSw9iqEAJw",
+      "name": "Hertz",
+      "review_count": 26,
+      "rating": null,
+      "primary_category": "Hotels & Travel",
+      "categories": [
+        "Hotels & Travel",
+        "Car Rental"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    },
+    {
+      "place_id": "IKLm7PJDrtFdZE2N_D3mUQ",
+      "name": "T-Mobile",
+      "review_count": 5,
+      "rating": null,
+      "primary_category": "Mobile Phones",
+      "categories": [
+        "Mobile Phones",
+        "Electronics",
+        "Telecommunications",
+        "Shopping",
+        "Local Services",
+        "IT Services & Computer Repair",
+        "Mobile Phone Accessories"
+      ],
+      "walking_time": 20,
+      "ring_index": 3,
+      "x": null,
+      "y": null,
+      "font_size": null
+    }
+  ]
+}
