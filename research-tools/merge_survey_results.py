@@ -181,9 +181,9 @@ def main():
                         **{f"{task}_correct": correct[i] for i, task in enumerate(TASKS)}, **{f"{task}_time_s": times[i] for i, task in enumerate(TASKS)}})
     wb = Workbook()
     wb.remove(wb.active)
-    add_table(wb, "参与者汇总", ["参与者编号", "教育阶段", "专业领域", "GIS经验", "可视化经验", "开始时间", "完成时间", "总用时", "任务正确率", "PREVis均值", "来源文件"],
-              [[p.get("参与者编号"), p.get("教育阶段"), p.get("专业领域"), p.get("GIS / 地图学经验"), p.get("数据可视化经验"), p.get("开始时间"), p.get("完成时间"), p.get("总用时"), m["task_accuracy"], m["PREVis_mean"], p["_source"]] for p, m in zip(people, metrics)],
-              [14, 16, 28, 20, 20, 21, 21, 18, 12, 12, 36], hidden=(11,), long_columns=(3,), data_height=36)
+    add_table(wb, "参与者汇总", ["参与者编号", "教育阶段", "专业领域", "GIS经验", "可视化经验", "开始时间", "完成时间", "总用时", "任务正确率", "PREVis均值", "来源文件", "questionnaire_version"],
+              [[p.get("参与者编号"), p.get("教育阶段"), p.get("专业领域"), p.get("GIS / 地图学经验"), p.get("数据可视化经验"), p.get("开始时间"), p.get("完成时间"), p.get("总用时"), m["task_accuracy"], m["PREVis_mean"], p["_source"], p.get("问卷版本") or p.get("questionnaire_version") or ""] for p, m in zip(people, metrics)],
+              [14, 16, 28, 20, 20, 21, 21, 18, 12, 12, 36, 28], hidden=(11,), long_columns=(3,), data_height=36)
     task_headers = ["参与者编号", "任务", "题目", "目标条件", "参与者答案", "正确答案", "是否正确", "作答用时", "切屏次数", "切屏时长", "来源文件", "task_id", "task_instance_id", "task_seed", "condition", "candidate_pool", "stimulus_file", "manifest_file", "target_ring", "target_category", "target_place_id", "selected_place_ids", "correct_place_ids", "correct_bool", "active_duration_ms", "active_duration_s", "hidden_duration_ms", "started_at_iso", "submitted_at_iso"]
     add_table(wb, "任务明细", task_headers, [[row.get(key if key != "来源文件" else "_source") for key in task_headers] for row in tasks],
               [14, 9, 50, 22, 36, 36, 10, 18, 11, 18, 36] + [24] * (len(task_headers) - 11), hidden=tuple(range(11, len(task_headers) + 1)), long_columns=(3, 4, 5, 6), data_height=36)
@@ -194,6 +194,8 @@ def main():
     metric_headers = ["参与者编号", "总体正确率", "正确题数", "平均任务时间(s)", "任务时间中位数(s)", "U均值", "L均值", "R均值", "PREVis总体均值", "T3−T4时间差(s)", "T3−T4正确性差"] + [f"{task}\n{'正确' if field.endswith('correct') else '时间(s)'}" for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["来源文件"]
     add_table(wb, "参与者指标", metric_headers, [[m[field] for field in metric_fields] for m in metrics], [14, 12, 11, 18, 20, 11, 11, 11, 18, 20, 20] + [14] * 10 + [36], hidden=(22,), header_height=42, data_height=29)
     stats = [["样本量 N", len(metrics), "参与者", ""], ["总体任务准确率", avg([binary(r.get("是否正确")) for r in tasks]), "比例", "客观绩效"]]
+    version_counts = Counter(p.get("问卷版本") or p.get("questionnaire_version") or "unknown" for p in people)
+    stats.extend([[f"版本样本数 {version}", count, "参与者", "文案版本记录；总体统计不拆分"] for version, count in sorted(version_counts.items())])
     for task in TASKS:
         selected = [row for row in tasks if row.get("任务") == task]
         stats.extend([[f"{task} 准确率", avg([binary(row.get("是否正确")) for row in selected]), "比例", "客观绩效"], [f"{task} 任务时间中位数", med([task_time(row) for row in selected]), "秒", "客观绩效"]])
