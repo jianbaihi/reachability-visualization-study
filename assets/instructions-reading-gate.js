@@ -1,7 +1,7 @@
 /* Visible instruction reading is separate from the task phase clock. */
 window.createInstructionsReadingGate = (session,persist) => {
   const announcementHost=document.querySelector('#instructions-reading-announcement'),button=document.querySelector('#tutorial [data-next="part-a"]');
-  const exempt=session.questionnaireVersion!=='questionnaire-v1.1.0'||['part-a','previs','completion'].includes(session.currentStep)||Object.keys(session.tasks||{}).length>0;
+  const exempt=!['questionnaire-v1.1.0','questionnaire-v1.1.1'].includes(session.questionnaireVersion)||['part-a','previs','completion'].includes(session.currentStep)||Object.keys(session.tasks||{}).length>0;
   let active=false,start=null,total=Math.max(0,Math.min(10000,Number(session.instructions_read_visible_ms)||0));
   let completed=exempt||session.instructions_read_gate_completed===true,lastAnnouncement='';
   const current=()=>Math.min(10000,total+(start===null?0:performance.now()-start));

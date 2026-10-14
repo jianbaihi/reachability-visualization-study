@@ -1,0 +1,2 @@
+/* Only the new instructions page: preserve scrolling without a legacy fixed warning covering its actions. */
+#tutorial.instructions-v1-1-1::after{display:none}

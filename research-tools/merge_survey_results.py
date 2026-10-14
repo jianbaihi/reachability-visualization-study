@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge local per-participant survey exports into a styled six-sheet analysis workbook."""
+"""Merge local per-participant survey exports into a version-separated archive and primary-analysis workbooks."""
 import argparse
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -97,133 +97,230 @@ def add_table(wb, title, headers, rows, widths, *, hidden=(), long_columns=(), h
     return ws
 
 
+SITES = ('github_pages', 'campus_server', 'unknown_legacy')
+VERSIONS = ('questionnaire-v1.0.0', 'questionnaire-v1.0.1', 'questionnaire-v1.1.0', 'questionnaire-v1.1.1')
+DIRECTORY_SITES = {'historical-v1.0.x': 'unknown_legacy', 'github-v1.1.0': 'github_pages', 'github-v1.1.1': 'github_pages', 'campus-v1.1.1': 'campus_server'}
+
+
+def digest(data):
+    import hashlib
+    return hashlib.sha256(data).hexdigest()
+
+
+def stable_uuid(value):
+    import uuid
+    try:
+        parsed = uuid.UUID(str(value))
+        return str(parsed) if parsed.int else None
+    except (ValueError, AttributeError, TypeError):
+        return None
+
+
+def json_text(value):
+    import json
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, default=str, separators=(',', ':'))
+
+
+def verify_sites(path, version):
+    import json, re
+    if not path:
+        raise ValueError('跨 github_pages / campus_server 主分析需要 --site-equivalence-manifest；尚未部署校园站不能假定等价')
+    receipt = json.loads(path.read_text())
+    pair = [receipt['deployments'][site] for site in ('github_pages', 'campus_server')]
+    expected = set(('formal-time-color-v2.svg', 'formal-category-color-v2.svg', 'rittenhouse-formal-dataset-v2.json', 'formal-task-pool-v5.json', 'formal-task-generator-v5.js'))
+    for record in pair:
+        if record.get('questionnaire_version') != version or not record.get('verified') or not re.fullmatch('[0-9a-f]{40}', record.get('commit', '')):
+            raise ValueError('站点等价证明缺少经核验的版本/commit')
+        if set(record.get('assets', {})) != expected or any(not re.fullmatch('[0-9a-f]{64}', v) for v in record['assets'].values()):
+            raise ValueError('站点等价证明缺少五项 SHA')
+    if pair[0]['commit'] != pair[1]['commit'] or pair[0]['assets'] != pair[1]['assets']:
+        raise ValueError('两站 commit / SHA 不一致，禁止跨站主分析')
+    return receipt
+
+
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("directory", type=Path, help="Folder containing participant XLSX files")
-    parser.add_argument("--analysis-version", default="questionnaire-v1.1.0", choices=("questionnaire-v1.0.0", "questionnaire-v1.0.1", "questionnaire-v1.1.0"), help="Version used for aggregate analysis; historical files remain in detail sheets")
+    import json
+    parser = argparse.ArgumentParser(description='只读导入四表 XLSX，完整归档与同版主分析分离；不修改原件。')
+    parser.add_argument('directory', type=Path)
+    parser.add_argument('--manifest', type=Path, help='JSON {files:[{path,source_site}]}，相对路径相对于 manifest')
+    parser.add_argument('--analysis-version', default='questionnaire-v1.1.1', choices=VERSIONS)
+    parser.add_argument('--analysis-sites', nargs='+', choices=SITES, default=['github_pages'])
+    parser.add_argument('--site-equivalence-manifest', type=Path)
+    parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args()
     directory = args.directory.expanduser().resolve()
-    files = sorted(path for path in directory.glob("*.xlsx") if not path.name.startswith("survey-master_") and not path.name.startswith("~$"))
-    if not files:
-        raise SystemExit(f"没有可合并的 XLSX 文件：{directory}")
-    people, tasks, previs, quality = [], [], [], []
-    session_ids = defaultdict(set)
-    for path in files:
+    output = (args.output_dir or directory / 'merged').expanduser().resolve()
+    if {'github_pages', 'campus_server'}.issubset(args.analysis_sites):
+        verify_sites(args.site_equivalence_manifest, args.analysis_version)
+    if args.manifest:
+        manifest = json.loads(args.manifest.read_text())
+        inputs = []
+        seen_paths = set()
+        for row in manifest['files']:
+            path = Path(row['path']).expanduser()
+            path = (args.manifest.parent / path).resolve() if not path.is_absolute() else path.resolve()
+            site = row.get('source_site', 'unknown_legacy')
+            if site not in SITES or path in seen_paths:
+                raise ValueError('manifest 站点不合法或同一路径重复；请修正导入清单')
+            seen_paths.add(path)
+            inputs.append((path, site))
+    else:
+        inputs = []
+        for path in sorted(directory.rglob('*.xlsx')):
+            if output in path.parents or path.name.startswith(('~$', 'survey-master_', 'archive_', 'primary_')):
+                continue
+            matches = {DIRECTORY_SITES[p] for p in path.relative_to(directory).parts[:-1] if p in DIRECTORY_SITES}
+            if len(matches) > 1:
+                raise ValueError('嵌套来源目录冲突：' + str(path))
+            inputs.append((path.resolve(), next(iter(matches), 'unknown_legacy')))
+    if not inputs:
+        raise ValueError('没有输入 XLSX')
+    quality, exports = [], []
+    def flag(item, issue, detail=''):
+        quality.append({'source_path': str(item['path']), 'participant_id': item.get('participant_id', ''), 'questionnaire_version': item.get('version', 'unknown'), 'source_site': item['site'], 'issue': issue, 'detail': str(detail)})
+    for path, site in inputs:
+        item = {'path': path, 'site': site, 'valid': True, 'status': 'included', 'rows': {}}
         try:
-            source = load_workbook(path, read_only=True, data_only=True)
-            if not all(name in source.sheetnames for name in SHEETS):
-                quality.append([path.name, "", "工作簿结构不完整", "缺少必需 Sheet"])
-                source.close()
-                continue
-            participant = records(source[SHEETS[0]])
-            if not participant:
-                quality.append([path.name, "", "参与者信息缺失", "没有数据行"])
-                source.close()
-                continue
-            person = participant[0]
-            person["_source"] = path.name
-            people.append(person)
-            task_rows = records(source[SHEETS[1]])
-            previs_rows = records(source[SHEETS[2]])
-            for row in task_rows:
-                row["_source"] = path.name
-                tasks.append(row)
-            for row in previs_rows:
-                row["_source"] = path.name
-                previs.append(row)
-            meta = {r.get("字段"): r.get("值") for r in records(source[SHEETS[3]])}
-            version = person.get("问卷版本") or person.get("questionnaire_version") or meta.get("问卷版本") or "unknown"
-            stimulus = person.get("刺激版本") or person.get("stimulus_version") or meta.get("刺激版本") or "unknown"
-            task_pool = person.get("题库版本") or person.get("task_pool_version") or meta.get("题库版本") or "unknown"
-            expected = {"questionnaire-v1.0.0": ("rittenhouse-formal-v1", "rittenhouse-formal-task-pool-v4"), "questionnaire-v1.0.1": ("rittenhouse-formal-v1", "rittenhouse-formal-task-pool-v4"), "questionnaire-v1.1.0": ("rittenhouse-formal-v2", "rittenhouse-formal-task-pool-v5")}
-            valid_version = version in expected and (stimulus, task_pool) == expected[version]
-            cohort = ("formal / v1.1.0" if version == "questionnaire-v1.1.0" else "pre-change / pilot") if valid_version else "excluded / metadata mismatch"
-            person.update(questionnaire_version=version, stimulus_version=stimulus, task_pool_version=task_pool, analysis_cohort=cohort, _valid_version=valid_version)
-            for row in task_rows + previs_rows:
-                row.update(questionnaire_version=version, stimulus_version=stimulus, task_pool_version=task_pool, analysis_cohort=cohort)
-            if not valid_version:
-                quality.append([path.name, person.get("参与者编号"), "版本元数据不一致", f"{version} / {stimulus} / {task_pool}; excluded from aggregate analysis"])
-            participant_id = str(person.get("参与者编号") or "")
-            session_ids[participant_id].add(str(meta.get("Participant UUID") or person.get("participant_uuid") or ""))
-            present_tasks = {r.get("任务") for r in task_rows}
-            present_previs = {r.get("题号") for r in previs_rows if number(r.get("评分")) is not None}
-            for missing in sorted(set(TASKS) - present_tasks):
-                quality.append([path.name, participant_id, "缺失任务", missing])
-            for missing in sorted(set(PREVIS) - present_previs):
-                quality.append([path.name, participant_id, "缺失 PREVis", missing])
-            if not meta.get("Task Seed") and not any(r.get("task_seed") for r in task_rows):
-                quality.append([path.name, participant_id, "缺失 task_seed", ""])
-            for row in task_rows:
-                if not row.get("正确答案"):
-                    quality.append([path.name, participant_id, "缺失 correct_answer", row.get("任务")])
-                if (number(row.get("切屏次数")) or 0) >= 10:
-                    quality.append([path.name, participant_id, "高 hidden_count", f'{row.get("任务")}: {row.get("切屏次数")}'])
-            if (number(person.get("total_duration_s")) or float("inf")) < 60:
-                quality.append([path.name, participant_id, "极短完成时间", str(person.get("总用时") or "")])
-            source.close()
+            item['checksum'] = digest(path.read_bytes())
+            book = load_workbook(path, read_only=True, data_only=True)
+            try:
+                for sheet in SHEETS:
+                    item['rows'][sheet] = records(book[sheet]) if sheet in book.sheetnames else []
+                if any(sheet not in book.sheetnames for sheet in SHEETS):
+                    item['valid'] = False
+                    flag(item, 'missing_sheet')
+            finally:
+                book.close()
+            people = item['rows'][SHEETS[0]]
+            person = people[0] if people else {}
+            if len(people) != 1:
+                item['valid'] = False
+                flag(item, 'participant_row_count', len(people))
+            meta = {row.get('字段'): row.get('值') for row in item['rows'][SHEETS[3]]}
+            item['person'], item['meta'] = person, meta
+            item['version'] = str(person.get('问卷版本') or person.get('questionnaire_version') or meta.get('问卷版本') or 'unknown')
+            item['participant_id'] = str(person.get('参与者编号') or person.get('participant_id') or '')
+            raw_uuid = person.get('participant_uuid') or meta.get('Participant UUID')
+            item['uuid'] = stable_uuid(raw_uuid)
+            if not item['uuid']:
+                flag(item, 'missing_or_invalid_uuid', '未补写 UUID；使用同版 participant_id 辅助查重')
+            if not item['participant_id']:
+                flag(item, 'missing_participant_id')
+                item['valid'] = False
+            for field in ('问卷版本', '刺激版本', '题库版本', '数据集'):
+                if person.get(field) and meta.get(field) and person[field] != meta[field]:
+                    flag(item, 'metadata_conflict', field)
+                    item['valid'] = False
+            stimulus = person.get('刺激版本') or meta.get('刺激版本')
+            pool = person.get('题库版本') or meta.get('题库版本')
+            expected = ('rittenhouse-formal-v1', 'rittenhouse-formal-task-pool-v4') if item['version'] in VERSIONS[:2] else ('rittenhouse-formal-v2', 'rittenhouse-formal-task-pool-v5')
+            if item['version'] not in VERSIONS or (stimulus, pool) != expected:
+                flag(item, 'version_metadata_mismatch', f"{item['version']} / {stimulus} / {pool}")
+                item['valid'] = False
+            ids = [row.get('任务') or row.get('task_id') for row in item['rows'][SHEETS[1]]]
+            questions = [row.get('题号') or row.get('item_code') for row in item['rows'][SHEETS[2]]]
+            if Counter(ids) != Counter(TASKS) or Counter(questions) != Counter(PREVIS):
+                flag(item, 'incomplete_or_duplicate_items', f'tasks={ids};PREVis={questions}')
+                item['valid'] = False
+            if not meta.get('Task Seed'):
+                flag(item, 'missing_task_seed')
+            for row in item['rows'][SHEETS[1]]:
+                for field in ('task_instance_id', '题目', '正确答案', 'active_duration_s'):
+                    if row.get(field) in (None, ''):
+                        flag(item, 'missing_field', f"{row.get('任务')}:{field}")
+                if binary(row.get('是否正确')) is None or task_time(row) is None or task_time(row) < 0:
+                    flag(item, 'invalid_task_result', row.get('任务'))
+                    item['valid'] = False
+            if any(number(row.get('评分')) is None or not 1 <= number(row['评分']) <= 7 for row in item['rows'][SHEETS[2]]):
+                flag(item, 'invalid_previs')
+                item['valid'] = False
+            semantic = {sheet: rows for sheet, rows in item['rows'].items() if sheet != SHEETS[3]}
+            semantic[SHEETS[3]] = [row for row in item['rows'][SHEETS[3]] if row.get('字段') != '导出时间']
+            item['semantic'] = digest(json_text(semantic).encode())
+            item['identity'] = (item['version'], item['uuid'] or item['participant_id'] or str(path))
+            exports.append(item)
         except Exception as exc:
-            quality.append([path.name, "", "读取失败", str(exc)[:180]])
-    counts = Counter(str(p.get("参与者编号") or "") for p in people)
-    for participant_id, count in counts.items():
-        if count > 1:
-            quality.append(["", participant_id, "重复 participant_id", str(count)])
-        if len(session_ids[participant_id]) > 1:
-            quality.append(["", participant_id, "同一 participant 不同 session", str(len(session_ids[participant_id]))])
-    rows_by_source = defaultdict(list)
-    previs_by_source = defaultdict(list)
-    for row in tasks:
-        rows_by_source[row["_source"]].append(row)
-    for row in previs:
-        previs_by_source[row["_source"]].append(row)
-    metrics = []
-    for person in people:
-        source = person["_source"]
-        p_tasks = {r.get("任务"): r for r in rows_by_source[source]}
-        p_previs = {r.get("题号"): number(r.get("评分")) for r in previs_by_source[source]}
-        correct = [binary(p_tasks.get(task, {}).get("是否正确")) for task in TASKS]
-        times = [task_time(p_tasks.get(task, {})) for task in TASKS]
-        u = avg([p_previs.get(item) for item in PREVIS[:3]])
-        l = avg([p_previs.get(item) for item in PREVIS[3:6]])
-        r = avg([p_previs.get(item) for item in PREVIS[6:]])
-        all_previs = avg(list(p_previs.values()))
-        metrics.append({"participant_id": person.get("参与者编号"), "source": source, "questionnaire_version": person["questionnaire_version"], "stimulus_version": person["stimulus_version"], "task_pool_version": person["task_pool_version"], "analysis_cohort": person["analysis_cohort"], "task_accuracy": avg(correct), "correct_count": sum(x or 0 for x in correct),
-                        "task_time_mean_s": avg(times), "task_time_median_s": med(times), "U_mean": u, "L_mean": l, "R_mean": r, "PREVis_mean": all_previs,
-                        "T3_minus_T4_time_s": round(times[2] - times[3], 3) if times[2] is not None and times[3] is not None else None,
-                        "T3_minus_T4_correct": correct[2] - correct[3] if correct[2] is not None and correct[3] is not None else None,
-                        **{f"{task}_correct": correct[i] for i, task in enumerate(TASKS)}, **{f"{task}_time_s": times[i] for i, task in enumerate(TASKS)}})
-    wb = Workbook()
-    wb.remove(wb.active)
-    add_table(wb, "参与者汇总", ["参与者编号", "教育阶段", "专业领域", "GIS经验", "可视化经验", "开始时间", "完成时间", "总用时", "任务正确率", "PREVis均值", "来源文件", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"],
-              [[p.get("参与者编号"), p.get("教育阶段"), p.get("专业领域"), p.get("GIS / 地图学经验"), p.get("数据可视化经验"), p.get("开始时间"), p.get("完成时间"), p.get("总用时"), m["task_accuracy"], m["PREVis_mean"], p["_source"], p["questionnaire_version"], p["stimulus_version"], p["task_pool_version"], p["analysis_cohort"]] for p, m in zip(people, metrics)],
-              [14, 16, 28, 20, 20, 21, 21, 18, 12, 12, 36, 28, 28, 36, 28], hidden=(11,), long_columns=(3,), data_height=36)
-    task_headers = ["参与者编号", "任务", "题目", "目标条件", "参与者答案", "正确答案", "是否正确", "作答用时", "切屏次数", "切屏时长", "来源文件", "task_id", "task_instance_id", "task_seed", "condition", "candidate_pool", "stimulus_file", "manifest_file", "target_ring", "target_category", "target_place_id", "target_poi_id", "selected_place_ids", "correct_place_ids", "correct_bool", "active_duration_ms", "active_duration_s", "hidden_duration_ms", "started_at_iso", "submitted_at_iso", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
-    add_table(wb, "任务明细", task_headers, [[row.get(key if key != "来源文件" else "_source") for key in task_headers] for row in tasks],
-              [14, 9, 50, 22, 36, 36, 10, 18, 11, 18, 36] + [24] * (len(task_headers) - 11), hidden=tuple(range(11, len(task_headers) + 1)), long_columns=(3, 4, 5, 6), data_height=36)
-    previs_headers = ["参与者编号", "维度", "题号", "题目", "评分", "来源文件", "dimension_code", "item_code", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
-    add_table(wb, "PREVis明细", previs_headers, [[row.get(key if key != "来源文件" else "_source") for key in previs_headers] for row in previs],
-              [14, 14, 9, 56, 10, 36, 18, 16, 28, 28, 36, 28], hidden=(6, 7, 8), long_columns=(4,), data_height=40)
-    metric_fields = ["participant_id", "task_accuracy", "correct_count", "task_time_mean_s", "task_time_median_s", "U_mean", "L_mean", "R_mean", "PREVis_mean", "T3_minus_T4_time_s", "T3_minus_T4_correct"] + [field for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["source", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
-    metric_headers = ["参与者编号", "总体正确率", "正确题数", "平均任务时间(s)", "任务时间中位数(s)", "U均值", "L均值", "R均值", "PREVis总体均值", "T3−T4时间差(s)", "T3−T4正确性差"] + [f"{task}\n{'正确' if field.endswith('correct') else '时间(s)'}" for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["来源文件", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
-    add_table(wb, "参与者指标", metric_headers, [[m[field] for field in metric_fields] for m in metrics], [14, 12, 11, 18, 20, 11, 11, 11, 18, 20, 20] + [14] * 10 + [36, 28, 28, 36, 28], hidden=(22,), header_height=42, data_height=29)
-    analysis_sources = {p["_source"] for p in people if p["_valid_version"] and p["questionnaire_version"] == args.analysis_version}
-    analysis_metrics = [m for m in metrics if m["source"] in analysis_sources]
-    analysis_tasks = [row for row in tasks if row["_source"] in analysis_sources]
-    stats = [["主分析版本", args.analysis_version, "版本", "其他版本保留在明细，不混入主分析"], ["样本量 N", len(analysis_metrics), "参与者", "仅主分析版本"], ["导入样本数", len(metrics), "参与者", "包含 pre-change / pilot"], ["总体任务准确率", avg([binary(r.get("是否正确")) for r in analysis_tasks]), "比例", "仅主分析版本"]]
-    version_counts = Counter(p["questionnaire_version"] for p in people)
-    stats.extend([[f"版本样本数 {version}", count, "参与者", "仅版本记录，不混合主分析"] for version, count in sorted(version_counts.items())])
+            flag(item, 'read_failure', str(exc)[:180])
+    groups = defaultdict(list)
+    for item in exports:
+        groups[item['identity']].append(item)
+    # Same UUID + version with different answers is never resolved by timestamp.
+    for group in groups.values():
+        if len({item['semantic'] for item in group}) > 1:
+            for item in group:
+                item['status'] = 'conflict_review'
+                flag(item, 'conflicting_identity', '同版稳定身份的数据冲突，全部退出统计，等待人工复核')
+        elif len({item['site'] for item in group}) > 1:
+            for item in group:
+                item['status'] = 'source_review'
+                flag(item, 'conflicting_source_provenance', '同一答卷多站点归属不明确，不擅自指定站点')
+        else:
+            for item in group[1:]:
+                item['status'] = 'exact_duplicate' if item['checksum'] == group[0]['checksum'] else 'equivalent_reexport'
+                flag(item, item['status'], str(group[0]['path']))
+    id_groups = defaultdict(list)
+    for item in exports:
+        if item['participant_id']:
+            id_groups[(item['version'], item['participant_id'])].append(item)
+    for group in id_groups.values():
+        if len({item['identity'] for item in group}) > 1:
+            for item in group:
+                item['status'] = 'conflict_review'
+                flag(item, 'participant_id_collision', '同版 ID 对应不同 UUID，不能证明为同一人，人工复核')
+    for item in exports:
+        if item['status'] == 'included' and not item['valid']:
+            item['status'] = 'invalid_review'
+    accepted = [item for item in exports if item['status'] == 'included' and item['valid']]
+    primary = [item for item in accepted if item['version'] == args.analysis_version and item['site'] in args.analysis_sites]
+    def provenance(item):
+        return {'source_path': str(item['path']), 'source_sha256': item['checksum'], 'source_site': item['site'], 'questionnaire_version': item['version'], 'participant_id': item['participant_id'], 'participant_uuid': item['uuid'] or '', 'participant_uuid_raw': item['person'].get('participant_uuid') or item['meta'].get('Participant UUID') or '', 'import_status': item['status']}
+    def data_rows(items, sheet):
+        return [{**row, **provenance(item), 'source_record_json': json_text(row)} for item in items for row in item['rows'][sheet]]
+    def table(wb, name, rows, headers=None):
+        headers = headers or list(dict.fromkeys(key for row in rows for key in row)) or ['说明']
+        values = [[row.get(key) for key in headers] for row in rows]
+        return add_table(wb, name, headers, values, [44 if 'path' in key or key in ('题目', '问题', 'detail') else 26 for key in headers], long_columns=tuple(range(1, len(headers) + 1)), data_height=36)
+    stats = []
+    for version, site in sorted({(item['version'], item['site']) for item in exports}):
+        selected = [item for item in accepted if (item['version'], item['site']) == (version, site)]
+        imported = [item for item in exports if (item['version'], item['site']) == (version, site)]
+        stats.append({'questionnaire_version': version, 'source_site': site, 'metric': 'sample_count', 'value': len(selected), 'imported_files': len(imported)})
+        for task in TASKS:
+            rows = [row for item in selected for row in item['rows'][SHEETS[1]] if (row.get('任务') or row.get('task_id')) == task]
+            stats.append({'questionnaire_version': version, 'source_site': site, 'metric': task + '_accuracy', 'value': avg([binary(row.get('是否正确')) for row in rows]), 'N': len(rows)})
+            stats.append({'questionnaire_version': version, 'source_site': site, 'metric': task + '_time_median_s', 'value': med([task_time(row) for row in rows]), 'N': len(rows)})
+        for dim in 'ULR':
+            scores = [avg([number(row.get('评分')) for row in item['rows'][SHEETS[2]] if str(row.get('题号', '')).startswith(dim)]) for item in selected]
+            stats.append({'questionnaire_version': version, 'source_site': site, 'metric': dim + '_mean', 'value': avg(scores), 'N': len(selected)})
+    output.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+    archive_path = output / ('archive_' + stamp + '.xlsx')
+    primary_path = output / ('primary_' + args.analysis_version + '_' + stamp + '.xlsx')
+    wb = Workbook(); wb.remove(wb.active)
+    for sheet in SHEETS:
+        table(wb, sheet, data_rows(exports, sheet))
+    table(wb, '导入追踪', [{**provenance(item), 'identity': '|'.join(item['identity']), 'valid': item['valid']} for item in exports])
+    table(wb, '版本站点统计', stats)
+    table(wb, '数据质量', quality, ['source_path', 'participant_id', 'questionnaire_version', 'source_site', 'issue', 'detail'])
+    wb.save(archive_path)
+    mainbook = Workbook(); mainbook.remove(mainbook.active)
+    table(mainbook, '分析条件', [{'questionnaire_version': args.analysis_version, 'source_sites': '|'.join(args.analysis_sites), 'N': len(primary), 'limitation': '仅同版；v1.1.0/v1.1.1 说明不等价。两站匿名浏览器不能证明同一人。'}])
+    for sheet in SHEETS:
+        table(mainbook, sheet, data_rows(primary, sheet))
+    table(mainbook, '分层统计', [row for row in stats if row['questionnaire_version'] == args.analysis_version and row['source_site'] in args.analysis_sites])
+    primary_stats = []
     for task in TASKS:
-        selected = [row for row in analysis_tasks if row.get("任务") == task]
-        stats.extend([[f"{task} 准确率", avg([binary(row.get("是否正确")) for row in selected]), "比例", "客观绩效"], [f"{task} 任务时间中位数", med([task_time(row) for row in selected]), "秒", "客观绩效"]])
-    for key in ("U_mean", "L_mean", "R_mean", "PREVis_mean"):
-        values = [m[key] for m in analysis_metrics]
-        stats.extend([[f"{key} 平均", avg(values), "1–7 分", "主观质量"], [f"{key} 标准差", sd(values), "1–7 分", "主观质量"]])
-    stats.append(["T3−T4 时间差中位数", med([m["T3_minus_T4_time_s"] for m in analysis_metrics]), "秒", "正值表示 T4 较快"])
-    add_table(wb, "总体统计", ["指标", "数值", "单位", "说明"], stats, [34, 18, 18, 46], long_columns=(1, 4), data_height=28)
-    add_table(wb, "数据质量", ["来源文件", "参与者编号", "问题", "详情"], quality, [38, 16, 32, 58], long_columns=(1, 3, 4), data_height=30)
-    output = directory / f'survey-master_{datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx'
-    wb.save(output)
-    print(f"合并 {len(people)} 个有效文件；任务 {len(tasks)} 行；PREVis {len(previs)} 行；质量标记 {len(quality)} 条。\n{output}")
+        rows = [row for item in primary for row in item['rows'][SHEETS[1]] if (row.get('任务') or row.get('task_id')) == task]
+        primary_stats.append({'questionnaire_version': args.analysis_version, 'task': task, 'N': len(rows), 'accuracy': avg([binary(row.get('是否正确')) for row in rows]), 'time_median_s': med([task_time(row) for row in rows])})
+    for dim in 'ULR':
+        scores = [avg([number(row.get('评分')) for row in item['rows'][SHEETS[2]] if str(row.get('题号', '')).startswith(dim)]) for item in primary]
+        primary_stats.append({'questionnaire_version': args.analysis_version, 'dimension': dim, 'N': len(primary), 'mean': avg(scores)})
+    table(mainbook, '同版总体统计', primary_stats)
+    mainbook.save(primary_path)
+    summary = {'analysis_version': args.analysis_version, 'analysis_sites': args.analysis_sites, 'input_files': len(inputs), 'read_exports': len(exports), 'archive_task_rows': sum(len(item['rows'][SHEETS[1]]) for item in exports), 'archive_previs_rows': sum(len(item['rows'][SHEETS[2]]) for item in exports), 'accepted_participants': len(accepted), 'primary_participants': len(primary), 'statuses': dict(Counter(item['status'] for item in exports)), 'version_site_statistics': stats, 'quality': quality, 'archive': str(archive_path), 'primary': str(primary_path), 'originals_modified': False}
+    (output / ('summary_' + stamp + '.json')).write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(json.dumps({key: value for key, value in summary.items() if key not in ('quality', 'version_site_statistics')}, ensure_ascii=False))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

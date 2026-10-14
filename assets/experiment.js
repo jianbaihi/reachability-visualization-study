@@ -5,13 +5,14 @@
   const STIMULUS_BY_VERSION=Object.freeze({
     "questionnaire-v1.0.0":{time:"assets/stimuli/formal/formal-time-color.svg",category:"assets/stimuli/formal/formal-category-color.svg",taskPool:"assets/stimuli/formal/formal-task-pool-v4.json"},
     "questionnaire-v1.0.1":{time:"assets/stimuli/formal/formal-time-color.svg",category:"assets/stimuli/formal/formal-category-color.svg",taskPool:"assets/stimuli/formal/formal-task-pool-v4.json"},
-    "questionnaire-v1.1.0":{time:"assets/stimuli/formal/formal-time-color-v2.svg",category:"assets/stimuli/formal/formal-category-color-v2.svg",taskPool:"assets/stimuli/formal/formal-task-pool-v5.json",dataset:"assets/stimuli/formal/rittenhouse-formal-dataset-v2.json"}
+    "questionnaire-v1.1.0":{time:"assets/stimuli/formal/formal-time-color-v2.svg",category:"assets/stimuli/formal/formal-category-color-v2.svg",taskPool:"assets/stimuli/formal/formal-task-pool-v5.json",dataset:"assets/stimuli/formal/rittenhouse-formal-dataset-v2.json"},
+    "questionnaire-v1.1.1":{time:"assets/stimuli/formal/formal-time-color-v2.svg",category:"assets/stimuli/formal/formal-category-color-v2.svg",taskPool:"assets/stimuli/formal/formal-task-pool-v5.json",dataset:"assets/stimuli/formal/rittenhouse-formal-dataset-v2.json"}
   });
   const Phase = Object.freeze({ PREPARING:"preparing", READY:"ready", COUNTDOWN:"countdown", ACTIVE:"active", SUBMITTING:"submitting", SUBMITTED:"submitted" });
-  const QUESTIONNAIRE_VERSION="questionnaire-v1.1.0",TASK_POOL_VERSION="rittenhouse-formal-task-pool-v5";
+  const QUESTIONNAIRE_VERSION="questionnaire-v1.1.1",TASK_POOL_VERSION="rittenhouse-formal-task-pool-v5";
   const sessionId=()=>crypto.randomUUID?.()||`${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  const CURRENT_KEY="reachability_questionnaire_session_v1_1_0";
-  const LEGACY_KEYS=["reachability_questionnaire_session_v1_0_1","reachability_questionnaire_session_v1_0_0"];
+  const CURRENT_KEY="reachability_questionnaire_session_v1_1_1";
+  const LEGACY_KEYS=["reachability_questionnaire_session_v1_1_0","reachability_questionnaire_session_v1_0_1","reachability_questionnaire_session_v1_0_0"];
   const compatibleSession=(()=>{
     for(const storageKey of [CURRENT_KEY,...LEGACY_KEYS]){
       const raw=localStorage.getItem(storageKey);
@@ -35,7 +36,12 @@
   const questionnaireSession=saved?{...saved}:{schemaVersion:1,participantId:`P-${participantUuid.replaceAll("-","").slice(0,8).toUpperCase()}`,participantUuid,questionnaireVersion:QUESTIONNAIRE_VERSION,datasetId:"rittenhouse-formal-snapshot-v2",stimulusVersion:"rittenhouse-formal-v2",taskPoolVersion:TASK_POOL_VERSION,releaseChannel:"frozen",taskSeed:sessionId(),currentStep:"welcome",background:{},tasks:{},taskInstances:{},previs:Object.fromEntries(["U1","U2","U3","L1","L2","L3","R1","R2","R3"].map(id=>[id,null])),createdAt:new Date().toISOString(),startedAt:null,completedAt:null,status:"in-progress"};
   const runtimeAssets=STIMULUS_BY_VERSION[questionnaireSession.questionnaireVersion];
   if(!runtimeAssets)throw new Error("Unsupported questionnaire session version; original storage is preserved.");
-  const isV2=questionnaireSession.questionnaireVersion==="questionnaire-v1.1.0";
+  const isV2=["questionnaire-v1.1.0","questionnaire-v1.1.1"].includes(questionnaireSession.questionnaireVersion);
+  if(questionnaireSession.questionnaireVersion==="questionnaire-v1.1.1"){
+    if(!window.QUESTIONNAIRE_INSTRUCTIONS_V1_1_1)throw new Error("Candidate instructions did not load");
+    document.querySelector(".instructions-description").textContent=window.QUESTIONNAIRE_INSTRUCTIONS_V1_1_1;
+    document.querySelector("#tutorial").classList.add("instructions-v1-1-1");
+  }
   const questionnaireContent=isV2?window.QUESTIONNAIRE_CONTENT_V2:window.QUESTIONNAIRE_CONTENT;
   const FORMAL_STIMULUS_MAP=Object.fromEntries(["T1","T2","T3","T4","T5"].map(taskId=>[taskId,taskId==="T5"?runtimeAssets.category:runtimeAssets.time]));
   const fetchRequired=async url=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);try{const response=await fetch(url,{signal:controller.signal,cache:"no-cache"});if(!response.ok)throw new Error(`Required resource failed: ${response.status} ${url}`);return await response.json();}finally{clearTimeout(timer)}};

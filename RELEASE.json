@@ -1,5 +1,5 @@
 {
-  "questionnaireVersion": "questionnaire-v1.1.0",
+  "questionnaireVersion": "questionnaire-v1.1.1",
   "datasetId": "rittenhouse-formal-snapshot-v2",
   "stimulusVersion": "rittenhouse-formal-v2",
   "taskPoolVersion": "rittenhouse-formal-task-pool-v5",
@@ -11,6 +11,6 @@
     "15-20": 23
   },
   "releaseStatus": "frozen",
-  "baseExperimentVersion": "questionnaire-v1.0.1",
-  "changeType": "formal-experiment-v2"
+  "baseExperimentVersion": "questionnaire-v1.1.0",
+  "changeType": "participant-instructions-revision"
 }

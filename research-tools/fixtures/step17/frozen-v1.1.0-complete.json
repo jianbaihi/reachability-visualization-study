@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "participantId": "P-B29C21C2",
+  "participantUuid": "b29c21c2-e248-44fe-8fb9-f5d77e40c396",
+  "questionnaireVersion": "questionnaire-v1.1.0",
+  "datasetId": "rittenhouse-formal-snapshot-v2",
+  "stimulusVersion": "rittenhouse-formal-v2",
+  "taskPoolVersion": "rittenhouse-formal-task-pool-v5",
+  "releaseChannel": "candidate",
+  "taskSeed": "05760028-08be-4532-8da3-d4d5ef919f86",
+  "currentStep": "completion",
+  "background": {
+    "education_level": "undergraduate_or_below",
+    "discipline_group": "geo_gis_mapping",
+    "gis_experience": "none",
+    "visualization_experience": "none"
+  },
+  "tasks": {
+    "T1": {
+      "task_id": "T1",
+      "task_instance_id": "T1-8ec1249e",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "condition": "time_ring_selection",
+      "candidate_pool": "",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "question_text": "请在图中选择 3 个位于【15–20 min】步行时间范围内的地点。",
+      "target_ring": "15-20",
+      "target_category": "",
+      "target_poi_id": "",
+      "target_poi_name": "",
+      "correct_answer_rule": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "correct_answer": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "correct_place_ids": [
+        "ysvzP0VvMTrGmUClKJ3img",
+        "OZnU--KfAdDwJarO8roRig",
+        "jLDwSeoQ_kDQwhnUJQO2yw",
+        "UwkrmLk--LT65HndB1Odhw",
+        "aRyP578y47vwJ4KFIicjCw",
+        "EaBgGhjd8rB9KVvCXKaiAw",
+        "cCwNX2r-4hDXPNGwDx2otg",
+        "H2c5e7PfcCg9f9Ew19-xRw",
+        "fWRWzBfQnMcNiaOi5TJVdw",
+        "T6S3ANFsbrl_1Q6ow-7XYA",
+        "___UdvaxCnwsQ7nA1eKZAQ",
+        "52KaQ6LSMgzjqhDuHBheJQ",
+        "Bk_1vsPtOtO0bojfQZQIOw",
+        "29ThPh6IA69V-SfcwfV9Dg",
+        "f-vB1_GyGBYzHX68xS5Dfw",
+        "AJzAO951NR1LFaBHojeudg",
+        "v7RMWJJ48HrX1gI8DXZbew",
+        "nqkMURJeB7RBi2serBYFNg",
+        "PhJeNe9KRtrek1BP-HaMtA",
+        "6wnbyXMDoM_M29zwacAmhQ",
+        "6Bos3UU5heFlqySLcYvwnw",
+        "4Peac-dIOM80hSw9iqEAJw",
+        "IKLm7PJDrtFdZE2N_D3mUQ"
+      ],
+      "correct_place_names": [
+        "Ms Tootsie's RBL",
+        "Via Bicycle",
+        "Sansom Kabob House",
+        "Pennsylvania Academy of Fine Arts",
+        "Yellowtail",
+        "Aloft Philadelphia Downtown",
+        "Six Fishes Healing Arts",
+        "Sushi Poke",
+        "Cafe V and Kitchen",
+        "The Gold Standard Cafe",
+        "PHLASH",
+        "Frugal Frames",
+        "Wasabi House",
+        "Starbucks",
+        "Saigon Quy-Bau Restaurant",
+        "Tableau at PAFA",
+        "Convention Center Parking Facility",
+        "W XYZ Bar",
+        "Bobby Chez",
+        "Grilly Cheese",
+        "Budget Car Rental",
+        "Hertz",
+        "T-Mobile"
+      ],
+      "selected_place_ids": [
+        "ysvzP0VvMTrGmUClKJ3img",
+        "OZnU--KfAdDwJarO8roRig",
+        "jLDwSeoQ_kDQwhnUJQO2yw"
+      ],
+      "selected_place_names": [
+        "Ms Tootsie's RBL",
+        "Via Bicycle",
+        "Sansom Kabob House"
+      ],
+      "answer": [
+        {
+          "id": "ysvzP0VvMTrGmUClKJ3img",
+          "name": "Ms Tootsie's RBL"
+        },
+        {
+          "id": "OZnU--KfAdDwJarO8roRig",
+          "name": "Via Bicycle"
+        },
+        {
+          "id": "jLDwSeoQ_kDQwhnUJQO2yw",
+          "name": "Sansom Kabob House"
+        }
+      ],
+      "correct": true,
+      "task_time_ms": 564,
+      "hidden_count": 0,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-14T06:41:47.000Z",
+      "submitted_at_iso": "2026-10-14T06:41:47.564Z"
+    },
+    "T2": {
+      "task_id": "T2",
+      "task_instance_id": "T2-9566ea32",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "condition": "top_one_review_count",
+      "candidate_pool": "",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "question_text": "在【5–10 min】步行时间范围内，请选择评论数量最高的地点。",
+      "target_ring": "5-10",
+      "target_category": "",
+      "target_poi_id": "gjFUrbSMo1rA1jgG5IhA2A",
+      "target_poi_name": "Chima Steakhouse",
+      "correct_answer_rule": "EXACT_PLACE_ID",
+      "correct_answer": "Chima Steakhouse",
+      "correct_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A"
+      ],
+      "correct_place_names": [
+        "Chima Steakhouse"
+      ],
+      "selected_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A"
+      ],
+      "selected_place_names": [
+        "Chima Steakhouse"
+      ],
+      "answer": [
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        }
+      ],
+      "correct": true,
+      "task_time_ms": 761,
+      "hidden_count": 1,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-14T06:41:50.336Z",
+      "submitted_at_iso": "2026-10-14T06:41:51.096Z"
+    },
+    "T3": {
+      "task_id": "T3",
+      "task_instance_id": "T3-db616c9a",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "condition": "normal_font_P35-P65",
+      "candidate_pool": "P35–P65",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "question_text": "请在地图中找到地点「Mattress Firm Chestnut Street」。它位于哪个步行时间范围？",
+      "target_ring": "0-5",
+      "target_category": "",
+      "target_poi_id": "Vu2JA3e98QsxaRhkiFIylw",
+      "target_poi_name": "Mattress Firm Chestnut Street",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "correct_answer": "0-5",
+      "correct_place_ids": [
+        "Vu2JA3e98QsxaRhkiFIylw"
+      ],
+      "correct_place_names": [
+        "Mattress Firm Chestnut Street"
+      ],
+      "selected_place_ids": [],
+      "selected_place_names": [],
+      "answer": "0-5",
+      "correct": true,
+      "task_time_ms": 998,
+      "hidden_count": 1,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-14T06:41:53.594Z",
+      "submitted_at_iso": "2026-10-14T06:41:54.592Z"
+    },
+    "T4": {
+      "task_id": "T4",
+      "task_instance_id": "T4-c223ece3",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "condition": "top3_largest_font",
+      "candidate_pool": "top3",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "question_text": "请在地图中找到地点「Luke's Lobster Rittenhouse」。它位于哪个步行时间范围？",
+      "target_ring": "0-5",
+      "target_category": "",
+      "target_poi_id": "30cpm1uq6xcQCmN6JTrB8w",
+      "target_poi_name": "Luke's Lobster Rittenhouse",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "correct_answer": "0-5",
+      "correct_place_ids": [
+        "30cpm1uq6xcQCmN6JTrB8w"
+      ],
+      "correct_place_names": [
+        "Luke's Lobster Rittenhouse"
+      ],
+      "selected_place_ids": [],
+      "selected_place_names": [],
+      "answer": "0-5",
+      "correct": true,
+      "task_time_ms": 927,
+      "hidden_count": 1,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-14T06:41:57.196Z",
+      "submitted_at_iso": "2026-10-14T06:41:58.123Z"
+    },
+    "T5": {
+      "task_id": "T5",
+      "task_instance_id": "T5-3d4855d6",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "condition": "category_top_review_count",
+      "candidate_pool": "",
+      "stimulus_file": "formal-category-color-v2.svg",
+      "manifest_file": "manifest-category-v2.json",
+      "question_text": "请在地图中选择【Shopping】类别中用户评论数量最多的地点。",
+      "target_ring": "5-10",
+      "target_category": "Shopping",
+      "target_poi_id": "X5fWO9e82EICHXzzs6eQMg",
+      "target_poi_name": "Rescue Spa",
+      "correct_answer_rule": "EXACT_PLACE_ID",
+      "correct_answer": "Rescue Spa",
+      "correct_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "correct_place_names": [
+        "Rescue Spa"
+      ],
+      "selected_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "selected_place_names": [
+        "Rescue Spa"
+      ],
+      "answer": [
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        }
+      ],
+      "correct": true,
+      "task_time_ms": 689,
+      "hidden_count": 1,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-14T06:42:00.683Z",
+      "submitted_at_iso": "2026-10-14T06:42:01.373Z"
+    }
+  },
+  "taskInstances": {
+    "T1": {
+      "task_id": "T1",
+      "task_instance_id": "T1-8ec1249e",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "condition": "time_ring_selection",
+      "candidate_pool": "",
+      "correct_answer_rule": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v5",
+      "target_ring": "15-20",
+      "ring_label": "15–20 min",
+      "valid_place_ids": [
+        "ysvzP0VvMTrGmUClKJ3img",
+        "OZnU--KfAdDwJarO8roRig",
+        "jLDwSeoQ_kDQwhnUJQO2yw",
+        "UwkrmLk--LT65HndB1Odhw",
+        "aRyP578y47vwJ4KFIicjCw",
+        "EaBgGhjd8rB9KVvCXKaiAw",
+        "cCwNX2r-4hDXPNGwDx2otg",
+        "H2c5e7PfcCg9f9Ew19-xRw",
+        "fWRWzBfQnMcNiaOi5TJVdw",
+        "T6S3ANFsbrl_1Q6ow-7XYA",
+        "___UdvaxCnwsQ7nA1eKZAQ",
+        "52KaQ6LSMgzjqhDuHBheJQ",
+        "Bk_1vsPtOtO0bojfQZQIOw",
+        "29ThPh6IA69V-SfcwfV9Dg",
+        "f-vB1_GyGBYzHX68xS5Dfw",
+        "AJzAO951NR1LFaBHojeudg",
+        "v7RMWJJ48HrX1gI8DXZbew",
+        "nqkMURJeB7RBi2serBYFNg",
+        "PhJeNe9KRtrek1BP-HaMtA",
+        "6wnbyXMDoM_M29zwacAmhQ",
+        "6Bos3UU5heFlqySLcYvwnw",
+        "4Peac-dIOM80hSw9iqEAJw",
+        "IKLm7PJDrtFdZE2N_D3mUQ"
+      ],
+      "valid_place_names": [
+        "Ms Tootsie's RBL",
+        "Via Bicycle",
+        "Sansom Kabob House",
+        "Pennsylvania Academy of Fine Arts",
+        "Yellowtail",
+        "Aloft Philadelphia Downtown",
+        "Six Fishes Healing Arts",
+        "Sushi Poke",
+        "Cafe V and Kitchen",
+        "The Gold Standard Cafe",
+        "PHLASH",
+        "Frugal Frames",
+        "Wasabi House",
+        "Starbucks",
+        "Saigon Quy-Bau Restaurant",
+        "Tableau at PAFA",
+        "Convention Center Parking Facility",
+        "W XYZ Bar",
+        "Bobby Chez",
+        "Grilly Cheese",
+        "Budget Car Rental",
+        "Hertz",
+        "T-Mobile"
+      ],
+      "correct_place_ids": [
+        "ysvzP0VvMTrGmUClKJ3img",
+        "OZnU--KfAdDwJarO8roRig",
+        "jLDwSeoQ_kDQwhnUJQO2yw",
+        "UwkrmLk--LT65HndB1Odhw",
+        "aRyP578y47vwJ4KFIicjCw",
+        "EaBgGhjd8rB9KVvCXKaiAw",
+        "cCwNX2r-4hDXPNGwDx2otg",
+        "H2c5e7PfcCg9f9Ew19-xRw",
+        "fWRWzBfQnMcNiaOi5TJVdw",
+        "T6S3ANFsbrl_1Q6ow-7XYA",
+        "___UdvaxCnwsQ7nA1eKZAQ",
+        "52KaQ6LSMgzjqhDuHBheJQ",
+        "Bk_1vsPtOtO0bojfQZQIOw",
+        "29ThPh6IA69V-SfcwfV9Dg",
+        "f-vB1_GyGBYzHX68xS5Dfw",
+        "AJzAO951NR1LFaBHojeudg",
+        "v7RMWJJ48HrX1gI8DXZbew",
+        "nqkMURJeB7RBi2serBYFNg",
+        "PhJeNe9KRtrek1BP-HaMtA",
+        "6wnbyXMDoM_M29zwacAmhQ",
+        "6Bos3UU5heFlqySLcYvwnw",
+        "4Peac-dIOM80hSw9iqEAJw",
+        "IKLm7PJDrtFdZE2N_D3mUQ"
+      ],
+      "correct_place_names": [
+        "Ms Tootsie's RBL",
+        "Via Bicycle",
+        "Sansom Kabob House",
+        "Pennsylvania Academy of Fine Arts",
+        "Yellowtail",
+        "Aloft Philadelphia Downtown",
+        "Six Fishes Healing Arts",
+        "Sushi Poke",
+        "Cafe V and Kitchen",
+        "The Gold Standard Cafe",
+        "PHLASH",
+        "Frugal Frames",
+        "Wasabi House",
+        "Starbucks",
+        "Saigon Quy-Bau Restaurant",
+        "Tableau at PAFA",
+        "Convention Center Parking Facility",
+        "W XYZ Bar",
+        "Bobby Chez",
+        "Grilly Cheese",
+        "Budget Car Rental",
+        "Hertz",
+        "T-Mobile"
+      ],
+      "correct_answer": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "prompt": "请在图中选择 3 个位于【15–20 min】步行时间范围内的地点。",
+      "participant_answer": [
+        {
+          "id": "ysvzP0VvMTrGmUClKJ3img",
+          "name": "Ms Tootsie's RBL"
+        },
+        {
+          "id": "OZnU--KfAdDwJarO8roRig",
+          "name": "Via Bicycle"
+        },
+        {
+          "id": "jLDwSeoQ_kDQwhnUJQO2yw",
+          "name": "Sansom Kabob House"
+        }
+      ],
+      "correct": true
+    },
+    "T2": {
+      "task_id": "T2",
+      "task_instance_id": "T2-9566ea32",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "condition": "top_one_review_count",
+      "candidate_pool": "",
+      "correct_answer_rule": "EXACT_PLACE_ID",
+      "task_pool_version": "rittenhouse-formal-task-pool-v5",
+      "target_ring": "5-10",
+      "ring_label": "5–10 min",
+      "target_poi_id": "gjFUrbSMo1rA1jgG5IhA2A",
+      "target_poi_name": "Chima Steakhouse",
+      "correct_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A"
+      ],
+      "correct_place_names": [
+        "Chima Steakhouse"
+      ],
+      "correct_answer": "Chima Steakhouse",
+      "prompt": "在【5–10 min】步行时间范围内，请选择评论数量最高的地点。",
+      "participant_answer": [
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        }
+      ],
+      "correct": true
+    },
+    "T3": {
+      "task_id": "T3",
+      "task_instance_id": "T3-db616c9a",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "condition": "normal_font_P35-P65",
+      "candidate_pool": "P35–P65",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v5",
+      "target_poi_id": "Vu2JA3e98QsxaRhkiFIylw",
+      "target_poi_name": "Mattress Firm Chestnut Street",
+      "target_ring": "0-5",
+      "ring_label": "0–5 min",
+      "correct_place_ids": [
+        "Vu2JA3e98QsxaRhkiFIylw"
+      ],
+      "correct_place_names": [
+        "Mattress Firm Chestnut Street"
+      ],
+      "correct_answer": "0-5",
+      "options": [
+        "0-5",
+        "5-10",
+        "10-15",
+        "15-20",
+        "unsure"
+      ],
+      "prompt": "请在地图中找到地点「Mattress Firm Chestnut Street」。它位于哪个步行时间范围？",
+      "participant_answer": "0-5",
+      "correct": true
+    },
+    "T4": {
+      "task_id": "T4",
+      "task_instance_id": "T4-c223ece3",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "stimulus_file": "formal-time-color-v2.svg",
+      "manifest_file": "manifest-time-v2.json",
+      "condition": "top3_largest_font",
+      "candidate_pool": "top3",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v5",
+      "paired_ring_with_T3": true,
+      "target_poi_id": "30cpm1uq6xcQCmN6JTrB8w",
+      "target_poi_name": "Luke's Lobster Rittenhouse",
+      "target_ring": "0-5",
+      "ring_label": "0–5 min",
+      "correct_place_ids": [
+        "30cpm1uq6xcQCmN6JTrB8w"
+      ],
+      "correct_place_names": [
+        "Luke's Lobster Rittenhouse"
+      ],
+      "correct_answer": "0-5",
+      "options": [
+        "0-5",
+        "5-10",
+        "10-15",
+        "15-20",
+        "unsure"
+      ],
+      "prompt": "请在地图中找到地点「Luke's Lobster Rittenhouse」。它位于哪个步行时间范围？",
+      "participant_answer": "0-5",
+      "correct": true
+    },
+    "T5": {
+      "task_id": "T5",
+      "task_instance_id": "T5-3d4855d6",
+      "task_seed": "05760028-08be-4532-8da3-d4d5ef919f86",
+      "stimulus_file": "formal-category-color-v2.svg",
+      "manifest_file": "manifest-category-v2.json",
+      "condition": "category_top_review_count",
+      "candidate_pool": "",
+      "correct_answer_rule": "EXACT_PLACE_ID",
+      "task_pool_version": "rittenhouse-formal-task-pool-v5",
+      "target_category": "Shopping",
+      "target_poi_id": "X5fWO9e82EICHXzzs6eQMg",
+      "target_poi_name": "Rescue Spa",
+      "target_ring": "5-10",
+      "correct_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "correct_place_names": [
+        "Rescue Spa"
+      ],
+      "correct_answer": "Rescue Spa",
+      "prompt": "请在地图中选择【Shopping】类别中用户评论数量最多的地点。",
+      "participant_answer": [
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        }
+      ],
+      "correct": true
+    }
+  },
+  "previs": {
+    "U1": 4,
+    "U2": 4,
+    "U3": 4,
+    "L1": 4,
+    "L2": 4,
+    "L3": 4,
+    "R1": 4,
+    "R2": 4,
+    "R3": 4
+  },
+  "createdAt": "2026-10-14T06:41:33.152Z",
+  "startedAt": "2026-10-14T06:41:33.502Z",
+  "completedAt": "2026-10-14T06:42:02.040Z",
+  "status": "completed",
+  "instructions_read_visible_ms": 10000,
+  "instructions_read_gate_completed": true,
+  "previsGroupIndex": 2,
+  "currentTaskId": "T5",
+  "activeTask": null,
+  "updatedAt": "2026-10-14T06:42:02.040Z"
+}
