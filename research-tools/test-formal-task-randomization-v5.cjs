@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path'),assert=require('assert').strict;
+const root=path.resolve(__dirname,'..'),base=path.join(root,'assets/stimuli/formal'),generator=require('../assets/formal-task-generator-v5.js');
+const pool=JSON.parse(fs.readFileSync(path.join(base,'formal-task-pool-v5.json'))),data=JSON.parse(fs.readFileSync(path.join(base,'rittenhouse-formal-dataset-v2.json'))),pois=data.pois;
+const counts={T1:{},T2:{},pairedRings:{},T4:{},T5:{}};let sameRing=0,duplicates=0,t1t2same=0;
+const bump=(bucket,key)=>bucket[key]=(bucket[key]||0)+1;
+for(let i=0;i<1000;i++){
+ const seed='V5-'+i,a=generator.generateTaskInstances(seed,pool);assert.deepEqual(a,generator.generateTaskInstances(seed,pool));assert.deepEqual(Object.keys(a),['T1','T2','T3','T4','T5']);
+ const winner=pois.filter(p=>p.ring===a.T2.target_ring).sort((x,y)=>y.review_count-x.review_count||x.place_id.localeCompare(y.place_id))[0];assert.deepEqual(a.T2.correct_place_ids,[winner.place_id]);assert.equal(a.T2.target_poi_id,winner.place_id);assert.equal(a.T2.correct_answer_rule,'EXACT_PLACE_ID');assert.equal(a.T2.correct_place_names.length,1);
+ assert(pool.T4.candidate_pool.some(p=>p.place_id===a.T4.target_poi_id));assert.equal(a.T4.target_ring,pois.find(p=>p.place_id===a.T4.target_poi_id).ring);assert.equal(a.T4.condition,'top3_largest_font');assert.equal(a.T4.candidate_pool,'top3');
+ assert.equal(a.T3.target_ring,a.T4.target_ring);assert.notEqual(a.T3.target_poi_id,a.T4.target_poi_id);assert(pool.T3.candidate_pool_by_ring[a.T4.target_ring].some(p=>p.place_id===a.T3.target_poi_id));
+ const candidates=pool.T3.candidate_pool_by_ring[a.T4.target_ring].filter(p=>p.place_id!==a.T4.target_poi_id).slice().sort((x,y)=>Math.abs([...x.name].length-[...a.T4.target_poi_name].length)-Math.abs([...y.name].length-[...a.T4.target_poi_name].length)||(x.place_id<y.place_id?-1:x.place_id>y.place_id?1:0));assert(candidates.slice(0,3).some(p=>p.place_id===a.T3.target_poi_id));
+ assert.notEqual(a.T2.target_ring,a.T4.target_ring);assert.notEqual(a.T2.target_poi_id,a.T4.target_poi_id);assert.notEqual(a.T1.target_ring,a.T2.target_ring);
+ assert(['Restaurants','Shopping'].includes(a.T5.target_category));const top=pois.filter(p=>p.formal_category===a.T5.target_category).sort((x,y)=>y.review_count-x.review_count)[0];assert.deepEqual(a.T5.correct_place_ids,[top.place_id]);assert.equal(a.T5.target_poi_id,top.place_id);assert(a.T5.prompt.includes(a.T5.target_category));
+ for(const t of Object.values(a)){assert.equal(t.task_pool_version,pool.taskPoolVersion);assert(t.stimulus_file.endsWith('-v2.svg'));}
+ sameRing+=Number(a.T3.target_ring===a.T4.target_ring);duplicates+=Number(a.T2.target_poi_id===a.T4.target_poi_id);t1t2same+=Number(a.T1.target_ring===a.T2.target_ring);
+ bump(counts.T1,a.T1.target_ring);bump(counts.T2,a.T2.target_ring);bump(counts.pairedRings,a.T4.target_ring);bump(counts.T4,a.T4.target_poi_id);bump(counts.T5,a.T5.target_category);
+}
+assert.equal(sameRing,1000);assert.equal(duplicates,0);assert.equal(t1t2same,0);assert.equal(Object.keys(counts.T2).length,4);assert.equal(Object.keys(counts.T4).length,3);assert.equal(Object.keys(counts.T5).length,2);
+for(const n of Object.values(counts.T2))assert(n>=190&&n<=310,'T2 distribution out of range: '+n);for(const n of Object.values(counts.T4))assert(n>=260&&n<=405,'T4 distribution out of range: '+n);for(const n of Object.values(counts.T5))assert(n>=440&&n<=560,'T5 distribution out of range: '+n);
+const broken=JSON.parse(JSON.stringify(pool)),ring=generator.generateTaskInstances('V5-0',pool).T4.target_ring;broken.T3.candidate_pool_by_ring[ring]=[];assert.throws(()=>generator.generateTaskInstances('V5-0',broken),/No ordinary-font T3/);
+const report={pass:true,seeds:1000,sameSeedDeterministic:true,counts,sameRingRate:1,T2T4DuplicateCount:duplicates,T1T2SameRingCount:t1t2same,missingT3PoolFails:true,T2Top1Integrity:true,T4Top3Integrity:true,T5Answers:{Restaurants:pool.T5.answers_by_category.Restaurants.correct_place,Shopping:pool.T5.answers_by_category.Shopping.correct_place}};fs.mkdirSync(path.join(root,'release-audit'),{recursive:true});fs.writeFileSync(path.join(root,'release-audit/step15d-joint-randomization.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

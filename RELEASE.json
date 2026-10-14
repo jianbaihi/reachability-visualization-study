@@ -1,8 +1,8 @@
 {
-  "questionnaireVersion": "questionnaire-v1.0.1",
-  "datasetId": "rittenhouse-fixed-v1",
-  "stimulusVersion": "rittenhouse-formal-v1",
-  "taskPoolVersion": "rittenhouse-formal-task-pool-v4",
+  "questionnaireVersion": "questionnaire-v1.1.0",
+  "datasetId": "rittenhouse-formal-snapshot-v2",
+  "stimulusVersion": "rittenhouse-formal-v2",
+  "taskPoolVersion": "rittenhouse-formal-task-pool-v5",
   "poiCount": 113,
   "ringDistribution": {
     "0-5": 30,
@@ -11,6 +11,6 @@
     "15-20": 23
   },
   "releaseStatus": "frozen",
-  "baseExperimentVersion": "questionnaire-v1.0.0",
-  "changeType": "participant-copy-and-ui-only"
+  "baseExperimentVersion": "questionnaire-v1.0.1",
+  "changeType": "formal-experiment-v2"
 }

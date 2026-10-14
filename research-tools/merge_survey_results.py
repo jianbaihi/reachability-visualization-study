@@ -100,6 +100,7 @@ def add_table(wb, title, headers, rows, widths, *, hidden=(), long_columns=(), h
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="Folder containing participant XLSX files")
+    parser.add_argument("--analysis-version", default="questionnaire-v1.1.0", choices=("questionnaire-v1.0.0", "questionnaire-v1.0.1", "questionnaire-v1.1.0"), help="Version used for aggregate analysis; historical files remain in detail sheets")
     args = parser.parse_args()
     directory = args.directory.expanduser().resolve()
     files = sorted(path for path in directory.glob("*.xlsx") if not path.name.startswith("survey-master_") and not path.name.startswith("~$"))
@@ -131,6 +132,17 @@ def main():
                 row["_source"] = path.name
                 previs.append(row)
             meta = {r.get("字段"): r.get("值") for r in records(source[SHEETS[3]])}
+            version = person.get("问卷版本") or person.get("questionnaire_version") or meta.get("问卷版本") or "unknown"
+            stimulus = person.get("刺激版本") or person.get("stimulus_version") or meta.get("刺激版本") or "unknown"
+            task_pool = person.get("题库版本") or person.get("task_pool_version") or meta.get("题库版本") or "unknown"
+            expected = {"questionnaire-v1.0.0": ("rittenhouse-formal-v1", "rittenhouse-formal-task-pool-v4"), "questionnaire-v1.0.1": ("rittenhouse-formal-v1", "rittenhouse-formal-task-pool-v4"), "questionnaire-v1.1.0": ("rittenhouse-formal-v2", "rittenhouse-formal-task-pool-v5")}
+            valid_version = version in expected and (stimulus, task_pool) == expected[version]
+            cohort = ("formal / v1.1.0" if version == "questionnaire-v1.1.0" else "pre-change / pilot") if valid_version else "excluded / metadata mismatch"
+            person.update(questionnaire_version=version, stimulus_version=stimulus, task_pool_version=task_pool, analysis_cohort=cohort, _valid_version=valid_version)
+            for row in task_rows + previs_rows:
+                row.update(questionnaire_version=version, stimulus_version=stimulus, task_pool_version=task_pool, analysis_cohort=cohort)
+            if not valid_version:
+                quality.append([path.name, person.get("参与者编号"), "版本元数据不一致", f"{version} / {stimulus} / {task_pool}; excluded from aggregate analysis"])
             participant_id = str(person.get("参与者编号") or "")
             session_ids[participant_id].add(str(meta.get("Participant UUID") or person.get("participant_uuid") or ""))
             present_tasks = {r.get("任务") for r in task_rows}
@@ -174,35 +186,38 @@ def main():
         l = avg([p_previs.get(item) for item in PREVIS[3:6]])
         r = avg([p_previs.get(item) for item in PREVIS[6:]])
         all_previs = avg(list(p_previs.values()))
-        metrics.append({"participant_id": person.get("参与者编号"), "source": source, "task_accuracy": avg(correct), "correct_count": sum(x or 0 for x in correct),
+        metrics.append({"participant_id": person.get("参与者编号"), "source": source, "questionnaire_version": person["questionnaire_version"], "stimulus_version": person["stimulus_version"], "task_pool_version": person["task_pool_version"], "analysis_cohort": person["analysis_cohort"], "task_accuracy": avg(correct), "correct_count": sum(x or 0 for x in correct),
                         "task_time_mean_s": avg(times), "task_time_median_s": med(times), "U_mean": u, "L_mean": l, "R_mean": r, "PREVis_mean": all_previs,
                         "T3_minus_T4_time_s": round(times[2] - times[3], 3) if times[2] is not None and times[3] is not None else None,
                         "T3_minus_T4_correct": correct[2] - correct[3] if correct[2] is not None and correct[3] is not None else None,
                         **{f"{task}_correct": correct[i] for i, task in enumerate(TASKS)}, **{f"{task}_time_s": times[i] for i, task in enumerate(TASKS)}})
     wb = Workbook()
     wb.remove(wb.active)
-    add_table(wb, "参与者汇总", ["参与者编号", "教育阶段", "专业领域", "GIS经验", "可视化经验", "开始时间", "完成时间", "总用时", "任务正确率", "PREVis均值", "来源文件", "questionnaire_version"],
-              [[p.get("参与者编号"), p.get("教育阶段"), p.get("专业领域"), p.get("GIS / 地图学经验"), p.get("数据可视化经验"), p.get("开始时间"), p.get("完成时间"), p.get("总用时"), m["task_accuracy"], m["PREVis_mean"], p["_source"], p.get("问卷版本") or p.get("questionnaire_version") or ""] for p, m in zip(people, metrics)],
-              [14, 16, 28, 20, 20, 21, 21, 18, 12, 12, 36, 28], hidden=(11,), long_columns=(3,), data_height=36)
-    task_headers = ["参与者编号", "任务", "题目", "目标条件", "参与者答案", "正确答案", "是否正确", "作答用时", "切屏次数", "切屏时长", "来源文件", "task_id", "task_instance_id", "task_seed", "condition", "candidate_pool", "stimulus_file", "manifest_file", "target_ring", "target_category", "target_place_id", "selected_place_ids", "correct_place_ids", "correct_bool", "active_duration_ms", "active_duration_s", "hidden_duration_ms", "started_at_iso", "submitted_at_iso"]
+    add_table(wb, "参与者汇总", ["参与者编号", "教育阶段", "专业领域", "GIS经验", "可视化经验", "开始时间", "完成时间", "总用时", "任务正确率", "PREVis均值", "来源文件", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"],
+              [[p.get("参与者编号"), p.get("教育阶段"), p.get("专业领域"), p.get("GIS / 地图学经验"), p.get("数据可视化经验"), p.get("开始时间"), p.get("完成时间"), p.get("总用时"), m["task_accuracy"], m["PREVis_mean"], p["_source"], p["questionnaire_version"], p["stimulus_version"], p["task_pool_version"], p["analysis_cohort"]] for p, m in zip(people, metrics)],
+              [14, 16, 28, 20, 20, 21, 21, 18, 12, 12, 36, 28, 28, 36, 28], hidden=(11,), long_columns=(3,), data_height=36)
+    task_headers = ["参与者编号", "任务", "题目", "目标条件", "参与者答案", "正确答案", "是否正确", "作答用时", "切屏次数", "切屏时长", "来源文件", "task_id", "task_instance_id", "task_seed", "condition", "candidate_pool", "stimulus_file", "manifest_file", "target_ring", "target_category", "target_place_id", "target_poi_id", "selected_place_ids", "correct_place_ids", "correct_bool", "active_duration_ms", "active_duration_s", "hidden_duration_ms", "started_at_iso", "submitted_at_iso", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
     add_table(wb, "任务明细", task_headers, [[row.get(key if key != "来源文件" else "_source") for key in task_headers] for row in tasks],
               [14, 9, 50, 22, 36, 36, 10, 18, 11, 18, 36] + [24] * (len(task_headers) - 11), hidden=tuple(range(11, len(task_headers) + 1)), long_columns=(3, 4, 5, 6), data_height=36)
-    previs_headers = ["参与者编号", "维度", "题号", "题目", "评分", "来源文件", "dimension_code", "item_code"]
+    previs_headers = ["参与者编号", "维度", "题号", "题目", "评分", "来源文件", "dimension_code", "item_code", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
     add_table(wb, "PREVis明细", previs_headers, [[row.get(key if key != "来源文件" else "_source") for key in previs_headers] for row in previs],
-              [14, 14, 9, 56, 10, 36, 18, 16], hidden=(6, 7, 8), long_columns=(4,), data_height=40)
-    metric_fields = ["participant_id", "task_accuracy", "correct_count", "task_time_mean_s", "task_time_median_s", "U_mean", "L_mean", "R_mean", "PREVis_mean", "T3_minus_T4_time_s", "T3_minus_T4_correct"] + [field for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["source"]
-    metric_headers = ["参与者编号", "总体正确率", "正确题数", "平均任务时间(s)", "任务时间中位数(s)", "U均值", "L均值", "R均值", "PREVis总体均值", "T3−T4时间差(s)", "T3−T4正确性差"] + [f"{task}\n{'正确' if field.endswith('correct') else '时间(s)'}" for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["来源文件"]
-    add_table(wb, "参与者指标", metric_headers, [[m[field] for field in metric_fields] for m in metrics], [14, 12, 11, 18, 20, 11, 11, 11, 18, 20, 20] + [14] * 10 + [36], hidden=(22,), header_height=42, data_height=29)
-    stats = [["样本量 N", len(metrics), "参与者", ""], ["总体任务准确率", avg([binary(r.get("是否正确")) for r in tasks]), "比例", "客观绩效"]]
-    version_counts = Counter(p.get("问卷版本") or p.get("questionnaire_version") or "unknown" for p in people)
-    stats.extend([[f"版本样本数 {version}", count, "参与者", "文案版本记录；总体统计不拆分"] for version, count in sorted(version_counts.items())])
+              [14, 14, 9, 56, 10, 36, 18, 16, 28, 28, 36, 28], hidden=(6, 7, 8), long_columns=(4,), data_height=40)
+    metric_fields = ["participant_id", "task_accuracy", "correct_count", "task_time_mean_s", "task_time_median_s", "U_mean", "L_mean", "R_mean", "PREVis_mean", "T3_minus_T4_time_s", "T3_minus_T4_correct"] + [field for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["source", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
+    metric_headers = ["参与者编号", "总体正确率", "正确题数", "平均任务时间(s)", "任务时间中位数(s)", "U均值", "L均值", "R均值", "PREVis总体均值", "T3−T4时间差(s)", "T3−T4正确性差"] + [f"{task}\n{'正确' if field.endswith('correct') else '时间(s)'}" for task in TASKS for field in (f"{task}_correct", f"{task}_time_s")] + ["来源文件", "questionnaire_version", "stimulus_version", "task_pool_version", "analysis_cohort"]
+    add_table(wb, "参与者指标", metric_headers, [[m[field] for field in metric_fields] for m in metrics], [14, 12, 11, 18, 20, 11, 11, 11, 18, 20, 20] + [14] * 10 + [36, 28, 28, 36, 28], hidden=(22,), header_height=42, data_height=29)
+    analysis_sources = {p["_source"] for p in people if p["_valid_version"] and p["questionnaire_version"] == args.analysis_version}
+    analysis_metrics = [m for m in metrics if m["source"] in analysis_sources]
+    analysis_tasks = [row for row in tasks if row["_source"] in analysis_sources]
+    stats = [["主分析版本", args.analysis_version, "版本", "其他版本保留在明细，不混入主分析"], ["样本量 N", len(analysis_metrics), "参与者", "仅主分析版本"], ["导入样本数", len(metrics), "参与者", "包含 pre-change / pilot"], ["总体任务准确率", avg([binary(r.get("是否正确")) for r in analysis_tasks]), "比例", "仅主分析版本"]]
+    version_counts = Counter(p["questionnaire_version"] for p in people)
+    stats.extend([[f"版本样本数 {version}", count, "参与者", "仅版本记录，不混合主分析"] for version, count in sorted(version_counts.items())])
     for task in TASKS:
-        selected = [row for row in tasks if row.get("任务") == task]
+        selected = [row for row in analysis_tasks if row.get("任务") == task]
         stats.extend([[f"{task} 准确率", avg([binary(row.get("是否正确")) for row in selected]), "比例", "客观绩效"], [f"{task} 任务时间中位数", med([task_time(row) for row in selected]), "秒", "客观绩效"]])
     for key in ("U_mean", "L_mean", "R_mean", "PREVis_mean"):
-        values = [m[key] for m in metrics]
+        values = [m[key] for m in analysis_metrics]
         stats.extend([[f"{key} 平均", avg(values), "1–7 分", "主观质量"], [f"{key} 标准差", sd(values), "1–7 分", "主观质量"]])
-    stats.append(["T3−T4 时间差中位数", med([m["T3_minus_T4_time_s"] for m in metrics]), "秒", "正值表示 T4 较快"])
+    stats.append(["T3−T4 时间差中位数", med([m["T3_minus_T4_time_s"] for m in analysis_metrics]), "秒", "正值表示 T4 较快"])
     add_table(wb, "总体统计", ["指标", "数值", "单位", "说明"], stats, [34, 18, 18, 46], long_columns=(1, 4), data_height=28)
     add_table(wb, "数据质量", ["来源文件", "参与者编号", "问题", "详情"], quality, [38, 16, 32, 58], long_columns=(1, 3, 4), data_height=30)
     output = directory / f'survey-master_{datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx'

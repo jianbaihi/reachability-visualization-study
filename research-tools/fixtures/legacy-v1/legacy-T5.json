@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "participantId": "P-F107639A",
+  "participantUuid": "f107639a-dfba-4597-800c-1ca97817901e",
+  "questionnaireVersion": "questionnaire-v1.0.0",
+  "datasetId": "rittenhouse-fixed-v1",
+  "stimulusVersion": "rittenhouse-formal-v1",
+  "taskPoolVersion": "rittenhouse-formal-task-pool-v4",
+  "releaseChannel": "production",
+  "taskSeed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+  "currentStep": "part-a",
+  "background": {
+    "education_level": "undergraduate_or_below",
+    "discipline_group": "geo_gis_mapping",
+    "gis_experience": "none",
+    "visualization_experience": "none"
+  },
+  "tasks": {
+    "T1": {
+      "task_id": "T1",
+      "task_instance_id": "T1-6323fde8",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "condition": "time_ring_selection",
+      "candidate_pool": "",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "question_text": "请在图中选择 3 个位于【5–10 min】步行时间范围内的地点。",
+      "target_ring": "5-10",
+      "target_category": "",
+      "target_poi_id": "",
+      "target_poi_name": "",
+      "correct_answer_rule": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "correct_answer": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "correct_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg",
+        "T8NWs6flR26edfhhwJNhNA",
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "P7MHW-EtCdp3eVF2P_nX0A",
+        "saVXla5i8TjE51S5uCaf6w",
+        "V8we7-uCa-SouadZmZ9Ieg",
+        "t2KQa1plnfMoA_LOgBrUGA",
+        "BM92j54mc-c-6MWqWSimRw",
+        "ONtMDaW8JZhPaV51gkf3CA",
+        "toEYTrafM81UMo2GyCSxFw",
+        "1qBemRZEO3XMlpyKZavTvg",
+        "cqzAz9oBzPNvJccZ2MNmbA",
+        "WWbrvdfiqWsNaNu0N9Qe2Q",
+        "doo0-waBL2E2kzySKMBvQQ",
+        "bzO826Hw3DCuQ5xl3OEP7Q",
+        "ZHXWdMiqsi3HwkLmSi_WgQ",
+        "uY4LSPsa3bVKzYQitbfsUw",
+        "018ixB-WinNmflwX2UvS1g",
+        "DQDZQp-THbeWE1uQ7CNZ5w",
+        "HF1YWT8QVR7095r-aLbV5g",
+        "aZd_dnnfvGdujkgWPai8tQ",
+        "NY-8LSYUh16FCSCdIeVWWQ",
+        "eUPf2XQgiZEVRO8-5RrSng",
+        "m408YCnvuIywzZkJX3K9KQ",
+        "Hz40F0hsr4CIrHGHcRZ0Xw",
+        "3WgzKhDmH5nU946Yk4wbzA",
+        "_YdvkXME0h2PNqP8yyA7Jg",
+        "xjPie6OJg5lM3Q9oJsJoeA",
+        "ZTFpUHP8c49fmvmonugO2g",
+        "0LpmLt3d6BK_ljVOadrMVQ"
+      ],
+      "correct_place_names": [
+        "Rescue Spa",
+        "Sahara Grill",
+        "Chima Steakhouse",
+        "Carl Alan Floral Designs LTD",
+        "Steak 48",
+        "The Cheesecake Factory",
+        "Loco Pez",
+        "Dmitri's",
+        "Liberty Time",
+        "Cambria Hotel Philadelphia Downtown Center City",
+        "Roy's Restaurant",
+        "Kidari Sushi Yatai",
+        "Perfect Choice Cleaning Services",
+        "Millennium Art Gallery",
+        "El Fuego",
+        "Buca di Beppo",
+        "Zushi",
+        "Pine St Deli",
+        "Colney Delicatessen",
+        "Element Philadelphia",
+        "Dolce Italian - Philadelphia",
+        "Brooks Brothers",
+        "Liberty Travel",
+        "Au Bon Pain",
+        "Salvation Army",
+        "Club Adesso",
+        "ShoeWoo",
+        "CVS Pharmacy",
+        "Finish Line Sports",
+        "Mitchell & Ness Nostalgia Company"
+      ],
+      "selected_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg",
+        "T8NWs6flR26edfhhwJNhNA",
+        "gjFUrbSMo1rA1jgG5IhA2A"
+      ],
+      "selected_place_names": [
+        "Rescue Spa",
+        "Sahara Grill",
+        "Chima Steakhouse"
+      ],
+      "answer": [
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        },
+        {
+          "id": "T8NWs6flR26edfhhwJNhNA",
+          "name": "Sahara Grill"
+        },
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        }
+      ],
+      "correct": true,
+      "task_time_ms": 1312,
+      "hidden_count": 0,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-13T07:48:15.038Z",
+      "submitted_at_iso": "2026-10-13T07:48:16.350Z"
+    },
+    "T2": {
+      "task_id": "T2",
+      "task_instance_id": "T2-32f4805a",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "condition": "top_two_review_counts",
+      "candidate_pool": "",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "question_text": "在【5–10 min】步行时间范围内，请选择评论数最高的 2 个地点。",
+      "target_ring": "5-10",
+      "target_category": "",
+      "target_poi_id": "",
+      "target_poi_name": "",
+      "correct_answer_rule": "UNORDERED_EXACT_SET",
+      "correct_answer": "Chima Steakhouse | Rescue Spa",
+      "correct_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "correct_place_names": [
+        "Chima Steakhouse",
+        "Rescue Spa"
+      ],
+      "selected_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "selected_place_names": [
+        "Chima Steakhouse",
+        "Rescue Spa"
+      ],
+      "answer": [
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        },
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        }
+      ],
+      "correct": true,
+      "task_time_ms": 1296,
+      "hidden_count": 0,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-13T07:48:18.886Z",
+      "submitted_at_iso": "2026-10-13T07:48:20.182Z"
+    },
+    "T3": {
+      "task_id": "T3",
+      "task_instance_id": "T3-87042978",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "condition": "normal_font_P35-P65",
+      "candidate_pool": "P35–P65",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "question_text": "请在图中找到地点「Buca di Beppo」。它位于哪个步行时间范围？",
+      "target_ring": "5-10",
+      "target_category": "",
+      "target_poi_id": "ZHXWdMiqsi3HwkLmSi_WgQ",
+      "target_poi_name": "Buca di Beppo",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "correct_answer": "5-10",
+      "correct_place_ids": [
+        "ZHXWdMiqsi3HwkLmSi_WgQ"
+      ],
+      "correct_place_names": [
+        "Buca di Beppo"
+      ],
+      "selected_place_ids": [],
+      "selected_place_names": [],
+      "answer": "5-10",
+      "correct": true,
+      "task_time_ms": 811,
+      "hidden_count": 0,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-13T07:48:22.937Z",
+      "submitted_at_iso": "2026-10-13T07:48:23.748Z"
+    },
+    "T4": {
+      "task_id": "T4",
+      "task_instance_id": "T4-cb5acd17",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "condition": "large_font_P85_plus",
+      "candidate_pool": "P85+",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "question_text": "请在图中找到地点「Sahara Grill」。它位于哪个步行时间范围？",
+      "target_ring": "5-10",
+      "target_category": "",
+      "target_poi_id": "T8NWs6flR26edfhhwJNhNA",
+      "target_poi_name": "Sahara Grill",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "correct_answer": "5-10",
+      "correct_place_ids": [
+        "T8NWs6flR26edfhhwJNhNA"
+      ],
+      "correct_place_names": [
+        "Sahara Grill"
+      ],
+      "selected_place_ids": [],
+      "selected_place_names": [],
+      "answer": "5-10",
+      "correct": true,
+      "task_time_ms": 813,
+      "hidden_count": 0,
+      "hidden_duration_ms": 0,
+      "started_at_iso": "2026-10-13T07:48:26.286Z",
+      "submitted_at_iso": "2026-10-13T07:48:27.100Z"
+    }
+  },
+  "taskInstances": {
+    "T1": {
+      "task_id": "T1",
+      "task_instance_id": "T1-6323fde8",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "condition": "time_ring_selection",
+      "candidate_pool": "",
+      "correct_answer_rule": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v4",
+      "target_ring": "5-10",
+      "ring_label": "5–10 min",
+      "valid_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg",
+        "T8NWs6flR26edfhhwJNhNA",
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "P7MHW-EtCdp3eVF2P_nX0A",
+        "saVXla5i8TjE51S5uCaf6w",
+        "V8we7-uCa-SouadZmZ9Ieg",
+        "t2KQa1plnfMoA_LOgBrUGA",
+        "BM92j54mc-c-6MWqWSimRw",
+        "ONtMDaW8JZhPaV51gkf3CA",
+        "toEYTrafM81UMo2GyCSxFw",
+        "1qBemRZEO3XMlpyKZavTvg",
+        "cqzAz9oBzPNvJccZ2MNmbA",
+        "WWbrvdfiqWsNaNu0N9Qe2Q",
+        "doo0-waBL2E2kzySKMBvQQ",
+        "bzO826Hw3DCuQ5xl3OEP7Q",
+        "ZHXWdMiqsi3HwkLmSi_WgQ",
+        "uY4LSPsa3bVKzYQitbfsUw",
+        "018ixB-WinNmflwX2UvS1g",
+        "DQDZQp-THbeWE1uQ7CNZ5w",
+        "HF1YWT8QVR7095r-aLbV5g",
+        "aZd_dnnfvGdujkgWPai8tQ",
+        "NY-8LSYUh16FCSCdIeVWWQ",
+        "eUPf2XQgiZEVRO8-5RrSng",
+        "m408YCnvuIywzZkJX3K9KQ",
+        "Hz40F0hsr4CIrHGHcRZ0Xw",
+        "3WgzKhDmH5nU946Yk4wbzA",
+        "_YdvkXME0h2PNqP8yyA7Jg",
+        "xjPie6OJg5lM3Q9oJsJoeA",
+        "ZTFpUHP8c49fmvmonugO2g",
+        "0LpmLt3d6BK_ljVOadrMVQ"
+      ],
+      "valid_place_names": [
+        "Rescue Spa",
+        "Sahara Grill",
+        "Chima Steakhouse",
+        "Carl Alan Floral Designs LTD",
+        "Steak 48",
+        "The Cheesecake Factory",
+        "Loco Pez",
+        "Dmitri's",
+        "Liberty Time",
+        "Cambria Hotel Philadelphia Downtown Center City",
+        "Roy's Restaurant",
+        "Kidari Sushi Yatai",
+        "Perfect Choice Cleaning Services",
+        "Millennium Art Gallery",
+        "El Fuego",
+        "Buca di Beppo",
+        "Zushi",
+        "Pine St Deli",
+        "Colney Delicatessen",
+        "Element Philadelphia",
+        "Dolce Italian - Philadelphia",
+        "Brooks Brothers",
+        "Liberty Travel",
+        "Au Bon Pain",
+        "Salvation Army",
+        "Club Adesso",
+        "ShoeWoo",
+        "CVS Pharmacy",
+        "Finish Line Sports",
+        "Mitchell & Ness Nostalgia Company"
+      ],
+      "correct_place_ids": [
+        "X5fWO9e82EICHXzzs6eQMg",
+        "T8NWs6flR26edfhhwJNhNA",
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "P7MHW-EtCdp3eVF2P_nX0A",
+        "saVXla5i8TjE51S5uCaf6w",
+        "V8we7-uCa-SouadZmZ9Ieg",
+        "t2KQa1plnfMoA_LOgBrUGA",
+        "BM92j54mc-c-6MWqWSimRw",
+        "ONtMDaW8JZhPaV51gkf3CA",
+        "toEYTrafM81UMo2GyCSxFw",
+        "1qBemRZEO3XMlpyKZavTvg",
+        "cqzAz9oBzPNvJccZ2MNmbA",
+        "WWbrvdfiqWsNaNu0N9Qe2Q",
+        "doo0-waBL2E2kzySKMBvQQ",
+        "bzO826Hw3DCuQ5xl3OEP7Q",
+        "ZHXWdMiqsi3HwkLmSi_WgQ",
+        "uY4LSPsa3bVKzYQitbfsUw",
+        "018ixB-WinNmflwX2UvS1g",
+        "DQDZQp-THbeWE1uQ7CNZ5w",
+        "HF1YWT8QVR7095r-aLbV5g",
+        "aZd_dnnfvGdujkgWPai8tQ",
+        "NY-8LSYUh16FCSCdIeVWWQ",
+        "eUPf2XQgiZEVRO8-5RrSng",
+        "m408YCnvuIywzZkJX3K9KQ",
+        "Hz40F0hsr4CIrHGHcRZ0Xw",
+        "3WgzKhDmH5nU946Yk4wbzA",
+        "_YdvkXME0h2PNqP8yyA7Jg",
+        "xjPie6OJg5lM3Q9oJsJoeA",
+        "ZTFpUHP8c49fmvmonugO2g",
+        "0LpmLt3d6BK_ljVOadrMVQ"
+      ],
+      "correct_place_names": [
+        "Rescue Spa",
+        "Sahara Grill",
+        "Chima Steakhouse",
+        "Carl Alan Floral Designs LTD",
+        "Steak 48",
+        "The Cheesecake Factory",
+        "Loco Pez",
+        "Dmitri's",
+        "Liberty Time",
+        "Cambria Hotel Philadelphia Downtown Center City",
+        "Roy's Restaurant",
+        "Kidari Sushi Yatai",
+        "Perfect Choice Cleaning Services",
+        "Millennium Art Gallery",
+        "El Fuego",
+        "Buca di Beppo",
+        "Zushi",
+        "Pine St Deli",
+        "Colney Delicatessen",
+        "Element Philadelphia",
+        "Dolce Italian - Philadelphia",
+        "Brooks Brothers",
+        "Liberty Travel",
+        "Au Bon Pain",
+        "Salvation Army",
+        "Club Adesso",
+        "ShoeWoo",
+        "CVS Pharmacy",
+        "Finish Line Sports",
+        "Mitchell & Ness Nostalgia Company"
+      ],
+      "correct_answer": "ANY_3_DISTINCT_IN_TARGET_RING",
+      "prompt": "请在图中选择 3 个位于【5–10 min】步行时间范围内的地点。",
+      "participant_answer": [
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        },
+        {
+          "id": "T8NWs6flR26edfhhwJNhNA",
+          "name": "Sahara Grill"
+        },
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        }
+      ],
+      "correct": true
+    },
+    "T2": {
+      "task_id": "T2",
+      "task_instance_id": "T2-32f4805a",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "condition": "top_two_review_counts",
+      "candidate_pool": "",
+      "correct_answer_rule": "UNORDERED_EXACT_SET",
+      "task_pool_version": "rittenhouse-formal-task-pool-v4",
+      "target_ring": "5-10",
+      "ring_label": "5–10 min",
+      "correct_place_ids": [
+        "gjFUrbSMo1rA1jgG5IhA2A",
+        "X5fWO9e82EICHXzzs6eQMg"
+      ],
+      "correct_place_names": [
+        "Chima Steakhouse",
+        "Rescue Spa"
+      ],
+      "correct_answer": "Chima Steakhouse | Rescue Spa",
+      "prompt": "在【5–10 min】步行时间范围内，请选择评论数最高的 2 个地点。",
+      "participant_answer": [
+        {
+          "id": "gjFUrbSMo1rA1jgG5IhA2A",
+          "name": "Chima Steakhouse"
+        },
+        {
+          "id": "X5fWO9e82EICHXzzs6eQMg",
+          "name": "Rescue Spa"
+        }
+      ],
+      "correct": true
+    },
+    "T3": {
+      "task_id": "T3",
+      "task_instance_id": "T3-87042978",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "condition": "normal_font_P35-P65",
+      "candidate_pool": "P35–P65",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v4",
+      "target_poi_id": "ZHXWdMiqsi3HwkLmSi_WgQ",
+      "target_poi_name": "Buca di Beppo",
+      "target_ring": "5-10",
+      "ring_label": "5–10 min",
+      "correct_place_ids": [
+        "ZHXWdMiqsi3HwkLmSi_WgQ"
+      ],
+      "correct_place_names": [
+        "Buca di Beppo"
+      ],
+      "correct_answer": "5-10",
+      "options": [
+        "0-5",
+        "5-10",
+        "10-15",
+        "15-20",
+        "unsure"
+      ],
+      "prompt": "请在图中找到地点「Buca di Beppo」。它位于哪个步行时间范围？",
+      "participant_answer": "5-10",
+      "correct": true
+    },
+    "T4": {
+      "task_id": "T4",
+      "task_instance_id": "T4-cb5acd17",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "stimulus_file": "formal-time-color.svg",
+      "manifest_file": "manifest-4.json",
+      "condition": "large_font_P85_plus",
+      "candidate_pool": "P85+",
+      "correct_answer_rule": "ANSWER_EQUALS_TARGET_RING",
+      "task_pool_version": "rittenhouse-formal-task-pool-v4",
+      "target_poi_id": "T8NWs6flR26edfhhwJNhNA",
+      "target_poi_name": "Sahara Grill",
+      "target_ring": "5-10",
+      "ring_label": "5–10 min",
+      "paired_ring_with_T3": true,
+      "correct_place_ids": [
+        "T8NWs6flR26edfhhwJNhNA"
+      ],
+      "correct_place_names": [
+        "Sahara Grill"
+      ],
+      "correct_answer": "5-10",
+      "options": [
+        "0-5",
+        "5-10",
+        "10-15",
+        "15-20",
+        "unsure"
+      ],
+      "prompt": "请在图中找到地点「Sahara Grill」。它位于哪个步行时间范围？",
+      "participant_answer": "5-10",
+      "correct": true
+    },
+    "T5": {
+      "task_id": "T5",
+      "task_instance_id": "T5-6de43c66",
+      "task_seed": "61fac7d9-e61d-49a3-9f6a-db6e137b674d",
+      "stimulus_file": "formal-category-color.svg",
+      "manifest_file": "manifest-3.json",
+      "condition": "category_top_review_count",
+      "candidate_pool": "",
+      "correct_answer_rule": "EXACT_PLACE_ID",
+      "task_pool_version": "rittenhouse-formal-task-pool-v4",
+      "target_category": "Hotels & Travel",
+      "target_poi_id": "EaBgGhjd8rB9KVvCXKaiAw",
+      "target_poi_name": "Aloft Philadelphia Downtown",
+      "target_ring": "15-20",
+      "correct_place_ids": [
+        "EaBgGhjd8rB9KVvCXKaiAw"
+      ],
+      "correct_place_names": [
+        "Aloft Philadelphia Downtown"
+      ],
+      "correct_answer": "Aloft Philadelphia Downtown",
+      "prompt": "请在图中选择【Hotels & Travel】类别中评论数最高的地点。"
+    }
+  },
+  "previs": {
+    "U1": null,
+    "U2": null,
+    "U3": null,
+    "L1": null,
+    "L2": null,
+    "L3": null,
+    "R1": null,
+    "R2": null,
+    "R3": null
+  },
+  "createdAt": "2026-10-13T07:48:12.210Z",
+  "startedAt": "2026-10-13T07:48:12.250Z",
+  "completedAt": null,
+  "status": "in-progress",
+  "previsGroupIndex": 0,
+  "currentTaskId": "T5",
+  "activeTask": {
+    "taskId": "T5",
+    "selected": [
+      {
+        "id": "EaBgGhjd8rB9KVvCXKaiAw",
+        "name": "Aloft Philadelphia Downtown"
+      }
+    ],
+    "target": {
+      "ring": null
+    },
+    "taskStartIso": "2026-10-13T07:48:29.652Z",
+    "hiddenCount": 0,
+    "hiddenDuration": 0
+  },
+  "updatedAt": "2026-10-13T07:48:30.057Z"
+}

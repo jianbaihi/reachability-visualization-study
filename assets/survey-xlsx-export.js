@@ -16,7 +16,8 @@
       ["education", "教育阶段", 16], ["discipline", "专业领域", 28, "left"], ["gis", "GIS / 地图学经验", 22, "left"], ["visualization", "数据可视化经验", 22, "left"],
       ["started_at", "开始时间", 21], ["completed_at", "完成时间", 21], ["duration", "总用时", 18],
       ["participant_uuid", "participant_uuid", 24, "left", true], ["started_at_iso", "started_at_iso", 24, "left", true], ["completed_at_iso", "completed_at_iso", 24, "left", true],
-      ["total_duration_ms", "duration_ms", 18, "center", true], ["total_duration_s", "duration_s", 18, "center", true]
+      ["total_duration_ms", "duration_ms", 18, "center", true], ["total_duration_s", "duration_s", 18, "center", true],
+      ["task_pool_version", "题库版本", 28, "left", true]
     ], dataHeight: 40 },
     tasks: { name: "任务记录", columns: [
       ["participant_id", "参与者编号", 14], ["task", "任务", 9], ["question", "题目", 50, "left"], ["target", "目标条件", 22, "left"],
@@ -25,7 +26,7 @@
       ["task_id", "task_id", 16, "center", true], ["task_instance_id", "task_instance_id", 24, "left", true], ["task_seed", "task_seed", 24, "left", true],
       ["condition", "condition", 24, "left", true], ["candidate_pool", "candidate_pool", 20, "left", true], ["stimulus_file", "stimulus_file", 28, "left", true],
       ["manifest_file", "manifest_file", 24, "left", true], ["target_ring", "target_ring", 16, "center", true], ["target_category", "target_category", 24, "left", true],
-      ["target_place_id", "target_place_id", 24, "left", true], ["selected_place_ids", "selected_place_ids", 32, "left", true],
+      ["target_place_id", "target_place_id", 24, "left", true], ["target_poi_id", "target_poi_id", 24, "left", true], ["selected_place_ids", "selected_place_ids", 32, "left", true],
       ["correct_place_ids", "correct_place_ids", 32, "left", true], ["correct_bool", "correct_bool", 16, "center", true],
       ["active_duration_ms", "active_duration_ms", 20, "center", true], ["active_duration_s", "active_duration_s", 20, "center", true],
       ["hidden_duration_ms", "hidden_duration_ms", 20, "center", true], ["started_at_iso", "started_at_iso", 24, "left", true], ["submitted_at_iso", "submitted_at_iso", 24, "left", true]
@@ -80,7 +81,7 @@
   function buildRows(session, content, environment = {}) {
     const start = session.startedAt || "", end = session.completedAt || "";
     const durationMs = start && end ? Date.parse(end) - Date.parse(start) : "";
-    const participant = [{ participant_id: session.participantId || "", questionnaire_version: session.questionnaireVersion || "", dataset_id: session.datasetId || "", stimulus_version: session.stimulusVersion || "",
+    const participant = [{ participant_id: session.participantId || "", questionnaire_version: session.questionnaireVersion || "", dataset_id: session.datasetId || "", stimulus_version: session.stimulusVersion || "", task_pool_version: session.taskPoolVersion || "",
       education: LOOKUPS.education_level[session.background?.education_level] || session.background?.education_level || "", discipline: LOOKUPS.discipline_group[session.background?.discipline_group] || session.background?.discipline_group || "",
       gis: LOOKUPS.experience[session.background?.gis_experience] || session.background?.gis_experience || "", visualization: LOOKUPS.experience[session.background?.visualization_experience] || session.background?.visualization_experience || "",
       started_at: localTime(start), completed_at: localTime(end), duration: formatDurationMs(durationMs), participant_uuid: session.participantUuid || "", started_at_iso: start, completed_at_iso: end, total_duration_ms: durationMs, total_duration_s: seconds(durationMs) }];
@@ -92,7 +93,7 @@
       return { participant_id: session.participantId || "", task: taskId, question: merged.question_text || merged.prompt || "", target: visibleTarget(merged), answer: answered ? answerNames(merged) : "", correct_answer: correctNames(merged),
         correct_mark: answered && typeof merged.correct === "boolean" ? (merged.correct ? "✓" : "✕") : "", duration: answered ? formatDurationMs(merged.task_time_ms) : "", hidden_count: answered ? merged.hidden_count ?? "" : "", hidden_duration: answered ? formatDurationMs(merged.hidden_duration_ms) : "",
         task_id: taskId, task_instance_id: merged.task_instance_id || "", task_seed: merged.task_seed || session.taskSeed || "", condition: merged.condition || "", candidate_pool: merged.candidate_pool || "",
-        stimulus_file: merged.stimulus_file || "", manifest_file: merged.manifest_file || "", target_ring: merged.target_ring || "", target_category: merged.target_category || "", target_place_id: merged.target_poi_id || "",
+        stimulus_file: merged.stimulus_file || "", manifest_file: merged.manifest_file || "", target_ring: merged.target_ring || "", target_category: merged.target_category || "", target_place_id: merged.target_poi_id || "", target_poi_id: merged.target_poi_id || "",
         selected_place_ids: (merged.selected_place_ids || []).join("|"), correct_place_ids: (merged.correct_place_ids || []).join("|"), correct_bool: answered && typeof merged.correct === "boolean" ? merged.correct : "",
         active_duration_ms: answered ? merged.task_time_ms ?? "" : "", active_duration_s: answered ? seconds(merged.task_time_ms) : "", hidden_duration_ms: answered ? merged.hidden_duration_ms ?? "" : "",
         started_at_iso: merged.started_at_iso || "", submitted_at_iso: merged.submitted_at_iso || "" };
@@ -104,7 +105,7 @@
       ["设备像素比", environment.devicePixelRatio ?? ""], ["Task Seed", session.taskSeed || ""], ["Session 创建时间", localTime(session.createdAt || session.startedAt)],
       ["完成时间", localTime(session.completedAt)], ["导出时间", localTime(environment.exportedAt || new Date().toISOString())], ["Participant UUID", session.participantUuid || ""],
       ["问卷版本", session.questionnaireVersion || ""], ["数据集", session.datasetId || ""], ["刺激版本", session.stimulusVersion || ""], ["题库版本", session.taskPoolVersion || ""], ["发布通道", session.releaseChannel || ""]
-    ].map(([field, value]) => ({ field, value }));
+    ].concat(session.instructions_read_visible_ms===undefined?[]:[["instructions_read_visible_ms",session.instructions_read_visible_ms],["instructions_read_gate_completed",session.instructions_read_gate_completed===true]]).map(([field, value]) => ({ field, value }));
     return { participant, tasks, previs, sessionMeta };
   }
   function estimateRowHeight(values, widths, { base = 24, max = 92 } = {}) {

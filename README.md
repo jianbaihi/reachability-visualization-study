@@ -1,26 +1,16 @@
 # Reachability Visualization Study
 
-Static web questionnaire for a research study on reachability-map visualization.
+Static research questionnaire: **questionnaire-v1.1.0 (frozen)**.
 
-Formal release: `questionnaire-v1.0.0`
+Public study: https://jianbaihi.github.io/reachability-visualization-study/
 
-Dataset: `rittenhouse-fixed-v1`
+- Stimulus: `rittenhouse-formal-v2`
+- Dataset: `rittenhouse-formal-snapshot-v2` (113 places)
+- Task pool: `rittenhouse-formal-task-pool-v5`
+- Previous v1.0.x sessions retain their original assets and answers.
 
-Formal stimuli:
+Run locally with `python3 -m http.server 8011`, then open http://127.0.0.1:8011/.
 
-- Walking-time stepped color
-- Yelp-category type color
+See [v1.1.0 release notes](docs/QUESTIONNAIRE_V1_1_0_RELEASE.md) for methods and validation. Offline research utilities are in `research-tools/`; participant workbooks are ignored by Git.
 
-This repository contains the participant-facing static questionnaire and offline research utilities.
-
-## Local preview
-
-```bash
-python3 -m http.server 8011
-```
-
-Then open `http://127.0.0.1:8011/`.
-
-## Research utilities
-
-Offline utilities are stored in `research-tools/`. Participant result workbooks are ignored by Git.
+Public functional validation and capacity are separate: the previous 25/50/100 concurrent-user acceptance failed. This release does not claim a capacity pass. Distribute the formal questionnaire in small, low-concurrency batches.
